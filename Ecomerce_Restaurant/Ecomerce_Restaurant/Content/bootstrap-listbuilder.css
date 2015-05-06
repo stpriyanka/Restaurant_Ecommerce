@@ -1,0 +1,73 @@
+﻿.list-builder
+{
+    margin-top: 12px
+}
+
+.list-builder .list-group-item > a.btn-remove .glyphicon,
+.list-builder .list-builder-prompt a.btn-prompt .glyphicon
+{
+    top: 2px;
+}
+
+.list-builder .list-builder-input a.btn .glyphicon
+{
+    top: 2px;
+}
+
+.list-builder .list-builder-input a.btn-link .glyphicon
+{
+    color: #999;
+}
+
+.list-builder .list-builder-input a.btn
+{
+    margin-top: 4px;
+}
+
+.list-builder .list-builder-input a.btn-link
+{
+    margin-right: 4px;
+}
+
+.list-builder .list-builder-input input
+{
+    width: 80%;
+}
+
+.list-builder .list-group-item:nth-child(2).list-builder-input
+{
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.list-builder .list-builder-prompt
+{
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.btn-success-muted
+{
+    color: #5cb85c; /* = background-color of btn-success */
+    background-color: #fff;
+    border-color: #d6e9c6; /* = border-color of alert-success */
+}
+
+.btn-success-muted:hover
+{
+    color: #47a447; /* = background-color of btn-success:hover */
+    background-color: #dff0d8; /* = background color of alert-success */
+}
+
+.btn-danger-muted
+{
+    color: #d9534f; /* = background color of btn-danger */
+    background-color: #fff;
+    border-color: #ebccd1; /* = border-color of alert-danger */
+}
+
+.btn-danger-muted:hover
+{
+    color: #d2322d; /* = background-color of btn-danger:hover */
+    background-color: #f2dede; /* = background color of alert-danger */
+}
