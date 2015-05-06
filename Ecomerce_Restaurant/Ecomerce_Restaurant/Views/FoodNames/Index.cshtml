@@ -4,17 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
- <p>
-     @using (Html.BeginForm("SearchView", "Home"))
-     {
-         <input type="text" name="searchvalue" value="enter Food name" />
-         <input type="submit" value="Search" />
-     }
- 
+<h2>List of all Food Menu</h2>
 
-
- </p>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>

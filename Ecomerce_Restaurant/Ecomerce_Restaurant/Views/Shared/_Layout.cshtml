@@ -63,27 +63,36 @@
                     </li>
                     <li><a id="navReservations" class="btn btn-group-justified" href="@Url.Action("Reservations", "Home")" role="button">RESERVATIONS</a></li>
                     <li><a id="navLocation" class="btn btn-group-justified" href="@Url.Action("Contact", "Home")" role="button">LOCATION</a></li>
-
                     @*@if (User.Identity.Name == "priyanka_tasnia@yahoo.com")
-                    {*@
-                        <li>@Html.ActionLink("CategoryDB", "Index", "FoodCategories")</li>
-                        <li>@Html.ActionLink("FoodItemDB", "Index", "FoodNames")</li>
+                        {*@
+                    <li>@Html.ActionLink("Food-Category", "Index", "FoodCategories")</li>
+                    <li>@Html.ActionLink("Food-Menu", "Index", "FoodNames")</li>
                     @*}*@
-                    
+                    @using (Html.BeginForm("SearchView", "Home"))
+                    {
 
+                        <form role="search" class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input type="text" name="searchvalue" placeholder="Search by category" class="form-control">
+                            </div>
+                        </form>
+                    }
 
 
                 </ul>
                 @Html.Partial("_LoginPartial")
-            
+                
+
             </div>
         </div>
         <div>
+
+            @*// enabled search option by category without bootstrap
             @using (Html.BeginForm("SearchView", "Home"))
             {
                 <input type="text" name="searchvalue" value="search food menu by category" />
                 <input type="submit" value="Search" />
-            }
+            }*@
 
 
         </div>
@@ -93,17 +102,17 @@
         @RenderBody()
         <hr />
         <div>
-              @*@Html.Partial("SearchView")*@
-          
+            @*@Html.Partial("SearchView")*@
+
 
         </div>
         <footer>
             @Html.Partial("_Footer");
         </footer>
-</div>
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

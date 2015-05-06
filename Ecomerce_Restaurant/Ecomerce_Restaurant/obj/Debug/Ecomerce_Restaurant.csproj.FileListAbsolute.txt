@@ -53,7 +53,6 @@ c:\users\priyanka\documents\visual studio 2013\Projects\Ecomerce_Restaurant\Ecom
 c:\users\priyanka\documents\visual studio 2013\Projects\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.csprojResolveAssemblyReference.cache
 c:\users\priyanka\documents\visual studio 2013\Projects\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.dll
 c:\users\priyanka\documents\visual studio 2013\Projects\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.pdb
-C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.csprojResolveAssemblyReference.cache
 C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.dll
 C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Ecomerce_Restaurant.dll.config
 C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Ecomerce_Restaurant.dll
