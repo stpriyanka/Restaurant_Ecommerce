@@ -244,6 +244,7 @@
     <Content Include="Views\FoodNames\Details.cshtml" />
     <Content Include="Views\FoodNames\Edit.cshtml" />
     <Content Include="Views\FoodNames\Index.cshtml" />
+    <Content Include="Views\Home\SearchView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

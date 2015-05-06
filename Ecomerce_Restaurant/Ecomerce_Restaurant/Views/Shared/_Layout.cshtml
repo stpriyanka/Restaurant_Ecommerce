@@ -69,19 +69,34 @@
                         <li>@Html.ActionLink("CategoryDB", "Index", "FoodCategories")</li>
                         <li>@Html.ActionLink("FoodItemDB", "Index", "FoodNames")</li>
                     @*}*@
+                    
 
 
 
                 </ul>
                 @Html.Partial("_LoginPartial")
+            
             </div>
+        </div>
+        <div>
+            @using (Html.BeginForm("SearchView", "Home"))
+            {
+                <input type="text" name="searchvalue" value="search food menu by category" />
+                <input type="submit" value="Search" />
+            }
+
+
         </div>
     </div>
 
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <div>
+              @*@Html.Partial("SearchView")*@
+          
 
+        </div>
         <footer>
             @Html.Partial("_Footer");
         </footer>

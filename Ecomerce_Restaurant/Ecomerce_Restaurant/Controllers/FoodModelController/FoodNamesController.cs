@@ -13,7 +13,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
 {
     public class FoodNamesController : Controller
     {
-        private FoodModelsDB db = new FoodModelsDB();
+        public FoodModelsDB db = new FoodModelsDB();
 
         // GET: FoodNames
         public ActionResult Index()
@@ -137,5 +137,6 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             }
             base.Dispose(disposing);
         }
+
     }
 }
