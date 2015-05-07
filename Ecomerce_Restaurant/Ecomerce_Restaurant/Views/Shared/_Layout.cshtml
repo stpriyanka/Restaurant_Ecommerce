@@ -45,8 +45,16 @@
                 <ul class="nav navbar-nav">
                     <li><a id="navHome" class="btn btn-group-justified" href="@Url.Action("Index", "Home")" role="button">HOME</a></li>
                     @*                    <li><a id="navAbout" class="btn btn-group-justified" href="@Url.Action("About", "Home")" role="button">ABOUT US</a></li>*@
+                    @*<li><a id="navReservations" class="btn btn-group-justified" href="@Url.Action("AdminView", "Home")" role="button">Admin</a></li>*@
+                    
+                    <li><a id="navLocation" class="btn btn-group-justified" href="@Url.Action("Contact", "Home")" role="button">LOCATION</a></li>
+                    @*@if (User.Identity.Name == "priyanka_tasnia@yahoo.com")
+                        {*@
+                    <li>@Html.ActionLink("CategoryAdmin", "Index", "FoodCategories")</li>
+                    <li>@Html.ActionLink("Food-MenuAdmin", "Index", "FoodNames")</li>
+                    @*}*@
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MENU<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer Section<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Appetizers</a></li>
                             <li><a href="#">Soup, Salads & Sides</a></li>
@@ -54,20 +62,14 @@
                             <li class="divider"></li>
                             <li><a href="#">Desserts</a></li>
                             <li class="divider"></li>
-                            @*     <li><a href="@Url.Action("FoodList", "Home")" role="button">Full Menu</a></li>*@
-                            <li><a href="@Url.Action("About", "Home")" role="button">Full Menu</a></li>
+                            <li><a href="@Url.Action("AdminView", "Home")" role="button">Food Menu</a></li>
 
 
                             @*  <li><a href=@Html.Action("FoodList", "Home", new { pageNumber = 1 })>Full Menu1</a>*@
                         </ul>
                     </li>
-                    <li><a id="navReservations" class="btn btn-group-justified" href="@Url.Action("Reservations", "Home")" role="button">RESERVATIONS</a></li>
-                    <li><a id="navLocation" class="btn btn-group-justified" href="@Url.Action("Contact", "Home")" role="button">LOCATION</a></li>
-                    @*@if (User.Identity.Name == "priyanka_tasnia@yahoo.com")
-                        {*@
-                    <li>@Html.ActionLink("Food-Category", "Index", "FoodCategories")</li>
-                    <li>@Html.ActionLink("Food-Menu", "Index", "FoodNames")</li>
-                    @*}*@
+
+                    
                     @using (Html.BeginForm("SearchView", "Home"))
                     {
 

@@ -1,39 +1,102 @@
 ﻿@model IEnumerable<Ecomerce_Restaurant.Models.FoodModels.FoodCategories>
 
-@{
-    ViewBag.Title = "Food Category Page [Admin]";
-}
 
-<h2>List of all categories</h2>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryDescription)
-            </th>
-            <th></th>
-        </tr>
+<h2>[Admin] Categories Section</h2>
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryDescription)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-            </tr>
-        }
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-    </table>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                   Create New Category
+
+                </a>
+            </h4>
+        </div>
+    </div>
+
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+            <div class="col-md-6">
+
+                <div class="form-horizontal">
+                    
+
+                    <input type="button" value="Create new Category" onclick="location.href='@Url.Action("Create", "FoodCategories")'" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                   List of Food Category
+                </a>
+            </h4>
+        </div>
+    </div>
+
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+            <div class="col-md-6">
+
+                <div class="form-horizontal">
+
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CategoryName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CategoryDescription)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryDescription)
+                                </td>
+                                <td>
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+
+
+                                    <div class="col-md-6 text-right">
+
+
+                                        <input type="button" title="Edit" class="btn btn-warning" value="Edit" onclick="location.href='@Url.Action("Edit", "FoodCategories", new { id = item.ID })'" />
+                                        <input type="button" title="Details" class="btn btn-info" value="Details" onclick="location.href='@Url.Action("Details", "FoodCategories", new { id = item.ID })'" />
+                                        <input type="button" title="Delete" class="btn btn-danger" value="Delete" onclick="location.href='@Url.Action("Delete", "FoodCategories", new { id = item.ID })'" />
+                                    </div>
+
+                                </td>
+                                
+                            </tr>
+                        }
+
+                    </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

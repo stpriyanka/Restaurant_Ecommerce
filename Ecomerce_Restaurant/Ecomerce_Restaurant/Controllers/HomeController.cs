@@ -38,5 +38,14 @@ namespace Ecomerce_Restaurant.Controllers
             var v = db.FoodNamesTable.Where(r => r.CategoryName == searchvalue).ToList();
             return View(v);
         }
+
+        public ActionResult AdminView() 
+        {
+
+            var v = db.FoodNamesTable.OrderBy(r => r.CategoryName).ToList(); 
+            return View(v);
+        }
+    
+
     }
 }

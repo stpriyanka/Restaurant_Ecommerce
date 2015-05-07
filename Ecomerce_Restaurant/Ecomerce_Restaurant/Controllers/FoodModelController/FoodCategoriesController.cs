@@ -12,13 +12,24 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
 {
     public class FoodCategoriesController : Controller
     {
-        private FoodModelsDB db = new FoodModelsDB();
+        FoodModelsDB db = new FoodModelsDB();
 
         // GET: FoodCategories
         public ActionResult Index()
         {
-            return View(db.FoodCategoriesesTable.ToList());
+        //    var p = db.FoodNamesTable.OrderBy(r => r.CategoryName).ToList() ;
+            var q = db.FoodCategoriesesTable.OrderBy(r => r.CategoryName).ToList();
+            
+            return View(q);
         }
+        //[HttpPost]
+        //public ActionResult addviewtoindex() 
+        //{
+
+        //    var p = db.FoodNamesTable.OrderBy(r => r.CategoryName).ToList();
+
+        //    return (p);
+        //}
 
         // GET: FoodCategories/Details/5
         public ActionResult Details(int? id)
@@ -84,6 +95,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             {
                 db.Entry(foodCategories).State = EntityState.Modified;
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             return View(foodCategories);
