@@ -56,7 +56,8 @@
             @Html.DisplayFor(modelItem => item.TotalRatedPeople)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FoodItemPicName)
+            <img src="~/Images/@(item.FoodItemPicName)" height="50" width="50" />
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

@@ -63,7 +63,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FoodItemPicName)
+            @*@Html.DisplayFor(model => model.FoodItemPicName)*@
+            <img src="~/Images/@(Model.FoodItemPicName)" height="150" width="150" />
         </dd>
 
     </dl>

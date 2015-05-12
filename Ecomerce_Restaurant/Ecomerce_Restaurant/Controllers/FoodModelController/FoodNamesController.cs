@@ -80,10 +80,8 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             FoodName foodName = db.FoodNamesTable.Find(id);
-            if (foodName == null)
-            {
-                return HttpNotFound();
-            }
+
+            ViewBag.c = db.FoodCategoriesesTable.Select(r => r.CategoryName).ToList();
             return View(foodName);
         }
 
@@ -92,14 +90,28 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(FoodName foodName)
+        public ActionResult Edit(FoodName foodName, HttpPostedFileBase foodpic)
         {
+            foodName.FoodItemPicName = foodName.Name + ".png";
+           
+
             if (ModelState.IsValid)
             {
                 db.Entry(foodName).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+            
+            if (foodpic != null && foodpic.ContentLength > 0)
+            {
+                var filename = Path.GetFileName(foodpic.FileName);
+                string x1 = foodName.Name;
+                string newfilename = x1 + ".png";
+                var filePath1 = Path.Combine(Server.MapPath("~/Images"), newfilename);
+                foodpic.SaveAs(filePath1);
             }
+            return RedirectToAction("Index");
+
+        }
+            
             return View(foodName);
         }
 

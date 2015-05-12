@@ -1,8 +1,5 @@
 ﻿@model Ecomerce_Restaurant.Models.FoodModels.FoodCategories
 
-@{
-    ViewBag.Title = "Delete";
-}
 
 <h2>Delete</h2>
 
@@ -33,11 +30,9 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> 
-
-            <input type="submit" value="Back" class="btn btn-default" onclick="location.href='@Url.Action("Index", "FoodCategories")'" /> 
-            
-              
-        </div>
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+      
+            <input type="button" class="btn btn-default" value="Back"  onclick="location.href='@Url.Action("Index", "FoodCategories")'" />
+          </div>
     }
 </div>

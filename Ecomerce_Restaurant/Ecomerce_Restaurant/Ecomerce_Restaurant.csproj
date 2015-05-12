@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort>44303</IISExpressSSLPort>
+    <IISExpressSSLPort>44306</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -181,6 +181,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Anthon.png" />
     <Content Include="Images\food_image_slide1.jpg" />
     <Content Include="Images\food_image_slide2.jpg" />
     <Content Include="Images\jumbotronbackground.jpg" />
@@ -190,6 +191,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -234,18 +237,18 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\FoodCategories\Create.cshtml" />
-    <Content Include="Views\FoodCategories\Delete.cshtml" />
     <Content Include="Views\FoodCategories\Details.cshtml" />
-    <Content Include="Views\FoodCategories\Edit.cshtml" />
     <Content Include="Views\FoodCategories\Index.cshtml" />
     <Content Include="Views\FoodNames\Create.cshtml" />
-    <Content Include="Views\FoodNames\Delete.cshtml" />
     <Content Include="Views\FoodNames\Details.cshtml" />
     <Content Include="Views\FoodNames\Edit.cshtml" />
     <Content Include="Views\FoodNames\Index.cshtml" />
     <Content Include="Views\Home\SearchView.cshtml" />
     <Content Include="Views\Home\AdminView.cshtml" />
+    <Content Include="Views\FoodCategories\Create.cshtml" />
+    <Content Include="Views\FoodCategories\Edit.cshtml" />
+    <Content Include="Views\FoodNames\Delete.cshtml" />
+    <Content Include="Views\FoodCategories\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

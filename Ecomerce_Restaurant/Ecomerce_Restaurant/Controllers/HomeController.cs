@@ -35,7 +35,7 @@ namespace Ecomerce_Restaurant.Controllers
         public ActionResult SearchView(string searchvalue)
         {
 
-            var v = db.FoodNamesTable.Where(r => r.CategoryName == searchvalue).ToList();
+            var v = db.FoodNamesTable.Where(r => r.CategoryName.Contains(searchvalue)).ToList();
             return View(v);
         }
 

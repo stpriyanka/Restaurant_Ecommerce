@@ -5,9 +5,12 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create","FoodNames",FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.FoodItemPicName)
+    
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default">
