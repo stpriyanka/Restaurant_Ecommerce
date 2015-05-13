@@ -1,6 +1,6 @@
 ﻿@model Ecomerce_Restaurant.Models.FoodModels.FoodName
 
-<h2>Edit Food Items</h2>
+<h2>Edit Menu</h2>
 
 @using (Html.BeginForm("Edit", "FoodNames",new{oldpicname=Model.FoodItemPicName}, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -8,7 +8,7 @@
     @Html.HiddenFor(m => m.FoodItemPicName)
 
     <div class="form-horizontal">
-        <h4>FoodName</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
