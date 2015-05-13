@@ -132,5 +132,14 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult foodview() 
+        {
+
+            var v = db.FoodNamesTable.ToList();
+            return PartialView(v);
+        }
+
+
     }
 }

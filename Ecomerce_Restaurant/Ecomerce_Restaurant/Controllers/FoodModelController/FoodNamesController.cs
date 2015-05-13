@@ -41,7 +41,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         {
             ViewBag.CategoryNames = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
 
-            return View();
+            return PartialView();
         }
 
         // POST: FoodNames/Create
@@ -54,8 +54,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             foodName.FoodItemPicName = foodName.Name + ".png";
             if (ModelState.IsValid)
             {
-                db.FoodNamesTable.Add(foodName);
-                db.SaveChanges();
+
 
                 if (foodpic != null && foodpic.ContentLength > 0)
                 {
@@ -64,7 +63,16 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
                     string newfilename = x1 + ".png";
                     var filePath1 = Path.Combine(Server.MapPath("~/Images"), newfilename);
                     foodpic.SaveAs(filePath1);
+                    db.FoodNamesTable.Add(foodName);
+                    db.SaveChanges();
                 }
+                else {
+                    foodName.FoodItemPicName = "default.png";
+                    db.FoodNamesTable.Add(foodName);
+                    db.SaveChanges();
+                }
+
+
 
                 return RedirectToAction("Index");
             }
@@ -82,36 +90,50 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             FoodName foodName = db.FoodNamesTable.Find(id);
 
             ViewBag.c = db.FoodCategoriesesTable.Select(r => r.CategoryName).ToList();
-            return View(foodName);
+            return PartialView(foodName);
         }
+
+
 
         // POST: FoodNames/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(FoodName foodName, HttpPostedFileBase foodpic)
+        public ActionResult Edit(FoodName foodName, string oldpicname, HttpPostedFileBase foodpic)
         {
             foodName.FoodItemPicName = foodName.Name + ".png";
-           
+
 
             if (ModelState.IsValid)
             {
-                db.Entry(foodName).State = EntityState.Modified;
-                db.SaveChanges();
-            
-            if (foodpic != null && foodpic.ContentLength > 0)
-            {
-                var filename = Path.GetFileName(foodpic.FileName);
-                string x1 = foodName.Name;
-                string newfilename = x1 + ".png";
-                var filePath1 = Path.Combine(Server.MapPath("~/Images"), newfilename);
-                foodpic.SaveAs(filePath1);
-            }
-            return RedirectToAction("Index");
 
-        }
-            
+                if (foodpic != null && foodpic.ContentLength > 0)
+                {
+                    string x1 = foodName.Name;
+                    string newfilename = x1 + ".png";
+                    var filePath1 = Path.Combine(Server.MapPath("~/Images"), newfilename);
+                    foodpic.SaveAs(filePath1);
+                    db.Entry(foodName).State = EntityState.Modified;
+                    db.SaveChanges(); var filename = Path.GetFileName(foodpic.FileName);
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(oldpicname))
+                    {
+                        foodName.FoodItemPicName = oldpicname;
+                    }
+                    else
+                    {
+                        foodName.FoodItemPicName = "default.png";
+                    }
+                    db.Entry(foodName).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return RedirectToAction("Index", "FoodCategories");
+
+            }
+
             return View(foodName);
         }
 
@@ -127,7 +149,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             {
                 return HttpNotFound();
             }
-            return View(foodName);
+            return PartialView(foodName);
         }
 
         // POST: FoodNames/Delete/5
@@ -138,7 +160,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             FoodName foodName = db.FoodNamesTable.Find(id);
             db.FoodNamesTable.Remove(foodName);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "FoodCategories");
         }
 
         protected override void Dispose(bool disposing)

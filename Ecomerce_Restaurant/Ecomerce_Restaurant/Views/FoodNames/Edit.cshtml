@@ -1,12 +1,8 @@
 ﻿@model Ecomerce_Restaurant.Models.FoodModels.FoodName
 
-@{
-    ViewBag.Title = "Edit";
-}
+<h2>Edit Food Items</h2>
 
-<h2>Edit</h2>
-
-@using (Html.BeginForm("Edit","FoodNames",FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Edit", "FoodNames",new{oldpicname=Model.FoodItemPicName}, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.FoodItemPicName)
@@ -77,20 +73,22 @@
             </div>
 
         </div>
-    
 
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a href="@Url.Action("Index", "FoodCategories")" role="button" class="btn btn-default">Back</a>
+            </div>
         </div>
-    </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
+    </div>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

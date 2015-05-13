@@ -11,25 +11,11 @@
 
     @Html.HiddenFor(m => m.FoodItemPicName)
     
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-                <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Add New Food Menu
-                    </a>
-                </h4>
-            </div>
-        </div>
-
-        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="panel-body">
+    
                 <div class="col-md-6">
 
 
                     <div class="form-horizontal">
-                        <h4>FoodName</h4>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
@@ -95,17 +81,13 @@
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <input type="submit" value="Create" class="btn btn-success" />
-                            </div>
+                                <a href="@Url.Action("Index", "FoodCategories")" role="button" class="btn btn-default">Back</a>
+
+                                             </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
-        </div>
-
-    </div>
+    
 }
 
-<div>
-    <p>    @Html.ActionLink("Back>>", "Index") </p>
-</div>
