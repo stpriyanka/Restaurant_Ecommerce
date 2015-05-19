@@ -53,21 +53,7 @@
                     <li>@Html.ActionLink("ADMIN", "Index", "FoodCategories")</li>
                     @*<li>@Html.ActionLink("Food-MenuAdmin", "Index", "FoodNames")</li>*@
                     @*}*@
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer Section<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Appetizers</a></li>
-                            <li><a href="#">Soup, Salads & Sides</a></li>
-                            <li><a href="#">Entrees</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Desserts</a></li>
-                            <li class="divider"></li>
-                            <li><a href="@Url.Action("AdminView", "Home")" role="button">Food Menu</a></li>
-
-
-                            @*  <li><a href=@Html.Action("FoodList", "Home", new { pageNumber = 1 })>Full Menu1</a>*@
-                        </ul>
-                    </li>
+                    <li><a id="navLocation" class="btn btn-group-justified" href="@Url.Action("AdminView", "Home")" role="button">Food-Store</a></li>
 
                     
                     @using (Html.BeginForm("SearchView", "Home"))

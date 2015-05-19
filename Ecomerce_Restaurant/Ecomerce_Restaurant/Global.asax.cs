@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-//using Ecomerce_Restaurant.Models.
+using System.Data.Entity;
+using Ecomerce_Restaurant.Models.FoodModels;
 
 namespace Ecomerce_Restaurant
 {
@@ -13,7 +14,7 @@ namespace Ecomerce_Restaurant
     {
         protected void Application_Start()
         {
-           // Database.SetInitializer<FoodModelsDB>(new DropCreateDatabaseIfModelChanges<FoodModelsDB>());
+            Database.SetInitializer<FoodModelsDB>(new DropCreateDatabaseIfModelChanges<FoodModelsDB>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

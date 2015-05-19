@@ -181,11 +181,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\ajax_loading.gif" />
     <Content Include="Images\Anthon.png" />
     <Content Include="Images\default.png" />
     <Content Include="Images\food_image_slide1.jpg" />
     <Content Include="Images\food_image_slide2.jpg" />
     <Content Include="Images\jumbotronbackground.jpg" />
+    <Content Include="Images\plus.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
