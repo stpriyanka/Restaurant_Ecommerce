@@ -39,7 +39,15 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         // GET: FoodNames/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryNames = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
+            var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
+            if (v.Any())
+            {
+                ViewBag.CategoryNames = v;
+            }
+            else
+            {
+                ViewBag.CategoryNames = "---";
+            }
 
             return PartialView();
         }
@@ -52,7 +60,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         public ActionResult Create(FoodName foodName, HttpPostedFileBase foodpic)
         {
             foodName.FoodItemPicName = foodName.Name + ".png";
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && foodName.CategoryName!="---")
             {
 
 
@@ -89,7 +97,16 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             }
             FoodName foodName = db.FoodNamesTable.Find(id);
 
-            ViewBag.c = db.FoodCategoriesesTable.Select(r => r.CategoryName).ToList();
+            var c= db.FoodCategoriesesTable.Select(r => r.CategoryName).ToList();
+            if (c.Any())
+            {
+                ViewBag.c = c;
+                }
+            else
+            {
+                ViewBag.c = "---";
+
+            }
             return PartialView(foodName);
         }
 
@@ -105,7 +122,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             foodName.FoodItemPicName = foodName.Name + ".png";
 
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && foodName.CategoryName!="---")
             {
 
                 if (foodpic != null && foodpic.ContentLength > 0)
