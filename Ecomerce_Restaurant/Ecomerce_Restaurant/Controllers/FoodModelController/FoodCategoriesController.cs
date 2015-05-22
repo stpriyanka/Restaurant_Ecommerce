@@ -111,7 +111,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         // POST: FoodCategories/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int delid)
+        public ActionResult Delete(int delid)
         {
             FoodCategories foodCategories = db.FoodCategoriesesTable.Find(delid);
             db.FoodCategoriesesTable.Remove(foodCategories);
