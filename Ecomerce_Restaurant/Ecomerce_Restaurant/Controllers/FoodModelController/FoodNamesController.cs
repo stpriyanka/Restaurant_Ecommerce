@@ -172,7 +172,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         // POST: FoodNames/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             FoodName foodName = db.FoodNamesTable.Find(id);
             db.FoodNamesTable.Remove(foodName);
