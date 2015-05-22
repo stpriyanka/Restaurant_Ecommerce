@@ -1,14 +1,12 @@
-﻿@model IEnumerable<Ecomerce_Restaurant.Models.FoodModels.FoodCategories>
+﻿@model System.Collections.Generic.IEnumerable<Ecomerce_Restaurant.Models.FoodModels.FoodCategories>
 
 
 <h2>Admiminstration Page</h2>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-success">
         <div class="panel-heading" role="tab" id="headingOne">
-
             @*<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">*@
             <p data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-
                 @Ajax.ActionLink("Add category", "Create", "FoodCategories", new AjaxOptions
                    {
                        InsertionMode = InsertionMode.Replace,
@@ -70,11 +68,7 @@
                             </tr>
                         }
                     </table>
-
-
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -90,20 +84,13 @@
         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
                 <div class="col-md-6">
-
-
-
                     <br />
-
-                    <p>
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </p>
                     @Ajax.ActionLink("+", "Create", "FoodNames", new AjaxOptions
                    {
                        InsertionMode = InsertionMode.Replace,
                        UpdateTargetId = "createmenudiv",
                        HttpMethod = "GET"
-                   })
+                   }, new { @class = "glyphicon" })
 
                     <div id="createmenudiv"></div>
 
