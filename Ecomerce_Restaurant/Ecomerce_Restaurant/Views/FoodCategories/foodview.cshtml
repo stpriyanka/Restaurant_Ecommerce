@@ -59,24 +59,27 @@
             </td>
             <td>
                 <div class="col-md-6">
-                    @Ajax.ActionLink("edit", "Edit", "FoodNames", new { id = item.ID }, new AjaxOptions
+                    <button class="btn btn-warning">
+                        @Ajax.ActionLink("edit", "Edit", "FoodNames", new { id = item.ID }, new AjaxOptions
 {
     UpdateTargetId = "createmenudiv",
     InsertionMode = InsertionMode.Replace,
     HttpMethod = "GET"
 })
-</div>
-</td> 
+                    </button>
+                </div>
+            </td>
             <td>
-            @Ajax.ActionLink("Delete", "Delete", "FoodNames", new { id = item.ID }, new AjaxOptions 
+                <button class="btn btn-danger">
+                    @Ajax.ActionLink("Delete", "Delete", "FoodNames", new { id = item.ID }, new AjaxOptions
        {
            UpdateTargetId = "createmenudiv",
-           InsertionMode= InsertionMode.Replace,
-           HttpMethod= "GET"
-       
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+
        })
-                
-                
+                </button>
+
             </td>
         </tr>
     }

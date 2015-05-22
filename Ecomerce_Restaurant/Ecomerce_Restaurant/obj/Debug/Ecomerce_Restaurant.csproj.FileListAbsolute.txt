@@ -108,3 +108,7 @@ C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsof
 C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.pdb
 C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.csprojResolveAssemblyReference.cache
+C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\PagedList.dll
+C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\PagedList.Mvc.dll
+C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\PagedList.xml
+C:\git-repo2\Ecomerce_v2013\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\PagedList.Mvc.xml

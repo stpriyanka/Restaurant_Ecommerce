@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Ecomerce_Restaurant.Models.FoodModels;
 using System.Threading;
+using PagedList;
 
 namespace Ecomerce_Restaurant.Controllers.FoodModelController
 {
@@ -19,22 +20,16 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
 
         //[Authorize(Users = "priyanka_tasnia@yahoo.com")]
 
-        public ActionResult Index()
+        public ActionResult Index(string currentFilter, int? page)
         {
             //    var p = db.FoodNamesTable.OrderBy(r => r.CategoryName).ToList() ;
             var q = db.FoodCategoriesesTable.OrderBy(r => r.CategoryName).ToList();
 
-            return View(q);
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(q.ToPagedList(pageNumber, pageSize));
         }
-        //[HttpPost]
-        //public ActionResult addviewtoindex() 
-        //{
-
-        //    var p = db.FoodNamesTable.OrderBy(r => r.CategoryName).ToList();
-
-        //    return (p);
-        //}
-
+      
         // GET: FoodCategories/Details/5
         public ActionResult Details(int? id)
         {
