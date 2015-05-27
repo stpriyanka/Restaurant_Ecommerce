@@ -60,7 +60,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         public ActionResult Create(FoodName foodName, HttpPostedFileBase foodpic)
         {
             foodName.FoodItemPicName = foodName.Name + ".png";
-            if (ModelState.IsValid && foodName.CategoryName!="---")
+            if (ModelState.IsValid && foodName.CategoryName != "---")
             {
 
 
@@ -74,7 +74,8 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
                     db.FoodNamesTable.Add(foodName);
                     db.SaveChanges();
                 }
-                else {
+                else
+                {
                     foodName.FoodItemPicName = "default.png";
                     db.FoodNamesTable.Add(foodName);
                     db.SaveChanges();
@@ -84,10 +85,13 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
 
                 return RedirectToAction("Index");
             }
-
-            return View(foodName);
+            else
+            {
+                var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
+                ViewBag.CategoryNames = v;
+                return View(foodName);
+            }
         }
-
         // GET: FoodNames/Edit/5
         public ActionResult Edit(int? id)
         {

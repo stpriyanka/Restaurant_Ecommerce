@@ -45,7 +45,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
         
         
         [Required]
-        public double FoodPrice { get; set; }
+        public decimal FoodPrice { get; set; }
         
         
         [Display( Name= "Current Rating")]
