@@ -64,6 +64,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 
     public class CustomerOrder {
 
+        [Key]
         public int OrderID { get; set; }
 
 
