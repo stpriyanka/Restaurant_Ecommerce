@@ -164,7 +164,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FoodModelController\CustomerOrderController.cs" />
+    <Compile Include="Controllers\FoodModelController\CustomerOrdersController.cs" />
     <Compile Include="Controllers\FoodModelController\FoodCategoriesController.cs" />
     <Compile Include="Controllers\FoodModelController\FoodNamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -268,11 +268,11 @@
     <Content Include="Views\FoodNames\Delete.cshtml" />
     <Content Include="Views\FoodCategories\Delete.cshtml" />
     <Content Include="Views\FoodCategories\foodview.cshtml" />
-    <Content Include="Views\CustomerOrder\Create.cshtml" />
-    <Content Include="Views\CustomerOrder\Delete.cshtml" />
-    <Content Include="Views\CustomerOrder\Details.cshtml" />
-    <Content Include="Views\CustomerOrder\Edit.cshtml" />
-    <Content Include="Views\CustomerOrder\Index.cshtml" />
+    <Content Include="Views\CustomerOrders\Create.cshtml" />
+    <Content Include="Views\CustomerOrders\Delete.cshtml" />
+    <Content Include="Views\CustomerOrders\Details.cshtml" />
+    <Content Include="Views\CustomerOrders\Edit.cshtml" />
+    <Content Include="Views\CustomerOrders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,107 +10,107 @@ using Ecomerce_Restaurant.Models.FoodModels;
 
 namespace Ecomerce_Restaurant.Controllers.FoodModelController
 {
-    public class CustomerOrderController : Controller
+    public class CustomerOrdersController : Controller
     {
         private FoodModelsDB db = new FoodModelsDB();
 
-        // GET: CustomerOrder
+        // GET: CustomerOrders
         public ActionResult Index()
         {
-            return View(db.FoodCategoriesesTable.ToList());
+            return View(db.CustomerOrdersTable.ToList());
         }
 
-        // GET: CustomerOrder/Details/5
+        // GET: CustomerOrders/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodCategories foodCategories = db.FoodCategoriesesTable.Find(id);
-            if (foodCategories == null)
+            CustomerOrder customerOrder = db.CustomerOrdersTable.Find(id);
+            if (customerOrder == null)
             {
                 return HttpNotFound();
             }
-            return View(foodCategories);
+            return View(customerOrder);
         }
 
-        // GET: CustomerOrder/Create
+        // GET: CustomerOrders/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CustomerOrder/Create
+        // POST: CustomerOrders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,CategoryName,CategoryDescription")] FoodCategories foodCategories)
+        public ActionResult Create([Bind(Include = "OrderID,Foodname,Price,Quantity,TotalPrice")] CustomerOrder customerOrder)
         {
             if (ModelState.IsValid)
             {
-                db.FoodCategoriesesTable.Add(foodCategories);
+                db.CustomerOrdersTable.Add(customerOrder);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(foodCategories);
+            return View(customerOrder);
         }
 
-        // GET: CustomerOrder/Edit/5
+        // GET: CustomerOrders/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodCategories foodCategories = db.FoodCategoriesesTable.Find(id);
-            if (foodCategories == null)
+            CustomerOrder customerOrder = db.CustomerOrdersTable.Find(id);
+            if (customerOrder == null)
             {
                 return HttpNotFound();
             }
-            return View(foodCategories);
+            return View(customerOrder);
         }
 
-        // POST: CustomerOrder/Edit/5
+        // POST: CustomerOrders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,CategoryName,CategoryDescription")] FoodCategories foodCategories)
+        public ActionResult Edit([Bind(Include = "OrderID,Foodname,Price,Quantity,TotalPrice")] CustomerOrder customerOrder)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(foodCategories).State = EntityState.Modified;
+                db.Entry(customerOrder).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(foodCategories);
+            return View(customerOrder);
         }
 
-        // GET: CustomerOrder/Delete/5
+        // GET: CustomerOrders/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodCategories foodCategories = db.FoodCategoriesesTable.Find(id);
-            if (foodCategories == null)
+            CustomerOrder customerOrder = db.CustomerOrdersTable.Find(id);
+            if (customerOrder == null)
             {
                 return HttpNotFound();
             }
-            return View(foodCategories);
+            return View(customerOrder);
         }
 
-        // POST: CustomerOrder/Delete/5
+        // POST: CustomerOrders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FoodCategories foodCategories = db.FoodCategoriesesTable.Find(id);
-            db.FoodCategoriesesTable.Remove(foodCategories);
+            CustomerOrder customerOrder = db.CustomerOrdersTable.Find(id);
+            db.CustomerOrdersTable.Remove(customerOrder);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
