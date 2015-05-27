@@ -62,5 +62,18 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 
     }
 
+    public class CustomerOrder {
+
+        public int OrderID { get; set; }
+
+
+        public string Foodname  { get; set; }
+    
+        public decimal Price { get; set; }
+    
+        public int Quantity { get; set; }
+        public int TotalPrice { get; set; }
+    }
+
 
 }
