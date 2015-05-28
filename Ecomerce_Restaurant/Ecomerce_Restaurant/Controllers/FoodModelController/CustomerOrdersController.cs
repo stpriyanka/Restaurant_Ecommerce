@@ -38,6 +38,9 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         // GET: CustomerOrders/Create
         public ActionResult Create()
         {
+            var v = db.FoodNamesTable.Select(r => r.Name).Distinct();
+            ViewBag.Foodname = v;
+            
             return View();
         }
 
@@ -58,7 +61,17 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             return View(customerOrder);
         }
 
+        [HttpPost]
+
+        public ActionResult AddToCart() {
+
+
+            return View();
+        
+        }
         // GET: CustomerOrders/Edit/5
+       
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
