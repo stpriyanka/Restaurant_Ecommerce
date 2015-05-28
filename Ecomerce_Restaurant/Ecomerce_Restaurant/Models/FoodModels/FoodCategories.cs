@@ -62,7 +62,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 
     }
 
-    public class CustomerOrder {
+    public class CustomerOrderCart {
 
         [Key]
         public int OrderID { get; set; }
@@ -71,9 +71,6 @@ namespace Ecomerce_Restaurant.Models.FoodModels
         public string Foodname  { get; set; }
     
         public decimal Price { get; set; }
-    
-        public int Quantity { get; set; }
-        public int TotalPrice { get; set; }
     }
 
 

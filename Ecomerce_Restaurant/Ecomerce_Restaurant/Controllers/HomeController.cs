@@ -39,7 +39,7 @@ namespace Ecomerce_Restaurant.Controllers
             return View(v);
         }
 
-        public ActionResult AdminView() 
+        public ActionResult Store() 
         {
 
             var v = db.FoodNamesTable.OrderBy(r => r.CategoryName).ToList(); 

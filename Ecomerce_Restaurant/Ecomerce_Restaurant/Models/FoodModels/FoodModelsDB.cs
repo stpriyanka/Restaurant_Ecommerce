@@ -11,6 +11,6 @@ namespace Ecomerce_Restaurant.Models.FoodModels
     {
         public DbSet<FoodCategories> FoodCategoriesesTable { get; set; }
         public DbSet<FoodName> FoodNamesTable { get; set; }
-        public DbSet<CustomerOrder> CustomerOrdersTable { get; set; }
+        public DbSet<CustomerOrderCart> CustomerOrdersTable { get; set; }
     }
 }
