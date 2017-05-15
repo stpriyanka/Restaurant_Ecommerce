@@ -3,103 +3,108 @@
 
 <h2>Admiminstration Page</h2>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-success">
-        <div class="panel-heading" role="tab" id="headingOne">
-            @*<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">*@
-            <p data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                @Ajax.ActionLink("Add category", "Create", "FoodCategories", new AjaxOptions
-                   {
-                       InsertionMode = InsertionMode.Replace,
-                       UpdateTargetId = "createcatdiv",
-                       HttpMethod = "GET"
-                   })
-            </p>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
-                <div class="col-md-6">
+	<div class="panel panel-success">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<p data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+				@Ajax.ActionLink("Add category", "Create", "FoodCategories", new AjaxOptions
+				   {
+					   InsertionMode = InsertionMode.Replace,
+					   UpdateTargetId = "createcatdiv",
+					   HttpMethod = "GET"
+				   })
+			</p>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+				<div class="col-md-6">
 
-                    <div id="createcatdiv"></div>
+					<div id="loader" style="display: none;">
+						<img src="~/Images/ajax_loading.gif" style="text-align: center" height="50" width="50"  />
+					</div>
+					<div id="createcatdiv">
 
-                </div>
-                <div class="col-md-6">
-                    <h3>Existing Category</h3><br />
+					</div>
 
-                    <div class="panel panel-default" id="editcatdiv"></div>
-                    <table class="table">
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CategoryName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CategoryDescription)
-                            </th>
-                            <th></th>
-                        </tr>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CategoryName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CategoryDescription)
-                                </td>
-                                <td>
-                                    <p class="btn btn-warning" style="color:#ffffff">
-                                        @Ajax.ActionLink("Edit", "Edit", "FoodCategories", new { id = item.ID }, new AjaxOptions
-                   {
-                       InsertionMode = InsertionMode.Replace,
-                       UpdateTargetId = "createcatdiv",
-                       HttpMethod = "GET"
-                   })
-                                    </p>
-                                </td>
-                                <td>
-                                    <p class="btn btn-danger">
-                                        @Ajax.ActionLink("Delete", "Delete", "FoodCategories", new { delid = item.ID }, new AjaxOptions
-                   {
-                       InsertionMode = InsertionMode.Replace,
-                       UpdateTargetId = "createcatdiv",
-                       HttpMethod = "GET"
-                   })
-                                    </p>
-                                </td>
-                            </tr>
-                        }
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-info">
+				</div>
+				<div class="col-md-6">
+					<h3>Existing Category</h3><br />
 
-        <div class="panel-heading" role="tab" id="headingTwo">
-            <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Food Menu
-                </a>
-            </h4>
-        </div>
-        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="panel-body">
-                <div class="col-md-6">
-                    <br />
-                    @Ajax.ActionLink("+", "Create", "FoodNames", new AjaxOptions
-                   {
-                       InsertionMode = InsertionMode.Replace,
-                       UpdateTargetId = "createmenudiv",
-                       HttpMethod = "GET"
-                   }, new { @class = "glyphicon" })
+					<div class="panel panel-default" id="editcatdiv"></div>
+					<table class="table">
+						<tr>
+							<th>
+								@Html.DisplayNameFor(model => model.CategoryName)
+							</th>
+							<th>
+								@Html.DisplayNameFor(model => model.CategoryDescription)
+							</th>
+							<th></th>
+						</tr>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>
+									@Html.DisplayFor(modelItem => item.CategoryName)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.CategoryDescription)
+								</td>
+								<td>
+									<p class="btn btn-warning" style="color:#ffffff">
+										@Ajax.ActionLink("Edit", "Edit", "FoodCategories", new { id = item.ID }, new AjaxOptions
+				   {
+					   InsertionMode = InsertionMode.Replace,
+					   UpdateTargetId = "createcatdiv",
+					   LoadingElementId = "loader",
+					   HttpMethod = "GET"
+				   })
+									</p>
+								</td>
+								<td>
+									<p class="btn btn-danger">
+										@Ajax.ActionLink("Delete", "Delete", "FoodCategories", new { delid = item.ID }, new AjaxOptions
+				   {
+					   InsertionMode = InsertionMode.Replace,
+					   UpdateTargetId = "createcatdiv",
+					   HttpMethod = "GET"
+				   })
+									</p>
+								</td>
+							</tr>
+						}
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-info">
 
-                    <div id="createmenudiv"></div>
+		<div class="panel-heading" role="tab" id="headingTwo">
+			<h4 class="panel-title">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					Food Menu
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+			<div class="panel-body">
+				<div class="col-md-6">
+					<br />
+					@Ajax.ActionLink("+", "CreateFoodItem", "FoodCategories", new AjaxOptions
+				   {
+					   InsertionMode = InsertionMode.Replace,
+					   UpdateTargetId = "createmenudiv",
+					   HttpMethod = "GET"
+				   }, new { @class = "glyphicon" })
+
+					<div id="createmenudiv"></div>
 
 
-                    @Html.Action("foodview", "FoodCategories")
+					@Html.Action("foodview", "FoodCategories")
 
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 

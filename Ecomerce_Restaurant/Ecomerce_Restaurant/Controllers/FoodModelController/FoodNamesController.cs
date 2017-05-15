@@ -13,7 +13,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
 {
     public class FoodNamesController : Controller
     {
-        public FoodModelsDB db = new FoodModelsDB();
+        public RestaurantContext db = new RestaurantContext();
 
         // GET: FoodNames
         public ActionResult Index()
@@ -36,48 +36,49 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             return View(foodName);
         }
 
-        // GET: FoodNames/Create
-        public ActionResult Create()
-        {
-            var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
-           return PartialView();
-        }
+		//// GET: FoodNames/Create
+		//public ActionResult Create()
+		//{
+		//	var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
+		//	ViewBag.CategoryNames = v;
+		//   return PartialView();
+		//}
 
-        // POST: FoodNames/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(FoodName foodName, HttpPostedFileBase foodpic)
-        {
-            foodName.FoodItemPicName = foodName.Name + ".png";
-            if (ModelState.IsValid)
-            {
-                if (foodpic != null && foodpic.ContentLength > 0)
-                {
-                    var filename = Path.GetFileName(foodpic.FileName);
-                    string x1 = foodName.Name;
-                    string newfilename = x1 + ".png";
-                    var filePath1 = Path.Combine(Server.MapPath("~/Images"), newfilename);
-                    foodpic.SaveAs(filePath1);
-                    db.FoodNamesTable.Add(foodName);
-                    db.SaveChanges();
-                }
-                else {
-                    foodName.FoodItemPicName = "default.png";
-                    db.FoodNamesTable.Add(foodName);
-                    db.SaveChanges();
-                }
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
-                ViewBag.CategoryNames = v;
-                return View(foodName);
-            }
+		//// POST: FoodNames/Create
+		//// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		//// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		//[HttpPost]
+		//[ValidateAntiForgeryToken]
+		//public ActionResult Create(FoodName foodName, HttpPostedFileBase foodpic)
+		//{
+		//	foodName.FoodItemPicName = foodName.Name + ".png";
+		//	if (ModelState.IsValid)
+		//	{
+		//		if (foodpic != null && foodpic.ContentLength > 0)
+		//		{
+		//			var filename = Path.GetFileName(foodpic.FileName);
+		//			string x1 = foodName.Name;
+		//			string newfilename = x1 + ".png";
+		//			var filePath1 = Path.Combine(Server.MapPath("~/Images"), newfilename);
+		//			foodpic.SaveAs(filePath1);
+		//			db.FoodNamesTable.Add(foodName);
+		//			db.SaveChanges();
+		//		}
+		//		else {
+		//			foodName.FoodItemPicName = "default.png";
+		//			db.FoodNamesTable.Add(foodName);
+		//			db.SaveChanges();
+		//		}
+		//		return RedirectToAction("Index");
+		//	}
+		//	else
+		//	{
+		//		var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
+		//		ViewBag.CategoryNames = v;
+		//		return View(foodName);
+		//	}
 
-        }
+		//}
 
         // GET: FoodNames/Edit/5
         public ActionResult Edit(int? id)

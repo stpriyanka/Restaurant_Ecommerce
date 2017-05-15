@@ -21,7 +21,7 @@ namespace Ecomerce_Restaurant.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+			: base("RestaurantContext", throwIfV1Schema: false)
         {
         }
 

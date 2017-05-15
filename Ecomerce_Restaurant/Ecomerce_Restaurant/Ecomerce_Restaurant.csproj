@@ -166,9 +166,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FoodModelController\FoodCategoriesController.cs" />
-    <Compile Include="Controllers\FoodModelController\FoodNamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,7 +189,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\ajax_loading.gif" />
-    <Content Include="Images\Anthon.png" />
     <Content Include="Images\default.png" />
     <Content Include="Images\food_image_slide1.jpg" />
     <Content Include="Images\food_image_slide2.jpg" />
@@ -249,17 +248,18 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\FoodCategories\Details.cshtml" />
     <Content Include="Views\FoodCategories\Index.cshtml" />
-    <Content Include="Views\FoodNames\Create.cshtml" />
-    <Content Include="Views\FoodNames\Details.cshtml" />
-    <Content Include="Views\FoodNames\Edit.cshtml" />
-    <Content Include="Views\FoodNames\Index.cshtml" />
     <Content Include="Views\Home\SearchView.cshtml" />
     <Content Include="Views\Home\AdminView.cshtml" />
     <Content Include="Views\FoodCategories\Create.cshtml" />
     <Content Include="Views\FoodCategories\Edit.cshtml" />
-    <Content Include="Views\FoodNames\Delete.cshtml" />
     <Content Include="Views\FoodCategories\Delete.cshtml" />
     <Content Include="Views\FoodCategories\foodview.cshtml" />
+    <Content Include="Views\FoodCategories\CreateFoodItem.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

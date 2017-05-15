@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Ecomerce_Restaurant.Models.FoodModels.FoodName>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalRatedPeople)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodItemPicName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalRatedPeople)
+        </td>
+	    <td>
+			<img src="~/Images/@(item.FoodItemPicName)" style="text-align: center" height="50" width="50" />
+	    </td>
+        <td>
+            @Html.ActionLink("Add to cart", "Edit", new { id=item.ID }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+        </td>
+    </tr>
+}
+
+</table>

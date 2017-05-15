@@ -57,9 +57,6 @@ namespace Ecomerce_Restaurant.Models.FoodModels
         
         
         public string FoodItemPicName { get; set; }
-
-
-
     }
 
 

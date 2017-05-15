@@ -7,8 +7,9 @@ using System.Web;
 
 namespace Ecomerce_Restaurant.Models.FoodModels
 {
-    public class FoodModelsDB:DbContext
+	public class RestaurantContext : DbContext
     {
+		//FoodModelsDB
         public DbSet<FoodCategories> FoodCategoriesesTable { get; set; }
         public DbSet<FoodName> FoodNamesTable { get; set; }
     

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -14,7 +15,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
 {
     public class FoodCategoriesController : Controller
     {
-        FoodModelsDB db = new FoodModelsDB();
+        RestaurantContext db = new RestaurantContext();
 
         // GET: FoodCategories
 
@@ -73,7 +74,8 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         public ActionResult Edit(int? id)
         {
             FoodCategories foodCategories = db.FoodCategoriesesTable.Find(id);
-            return PartialView(foodCategories);
+			Thread.Sleep(3000);
+			return PartialView(foodCategories);
         }
 
         // POST: FoodCategories/Edit/5
@@ -134,6 +136,52 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             var v = db.FoodNamesTable.ToList();
             return PartialView(v);
         }
+
+		// GET: FoodNames/Create
+		public ActionResult CreateFoodItem()
+		{
+			var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
+			ViewBag.CategoryNames = v;
+			return PartialView();
+		}
+
+		// POST: FoodNames/Create
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult CreateFoodItem(FoodName foodName, HttpPostedFileBase foodpic)
+		{
+			foodName.FoodItemPicName = foodName.Name + ".png";
+			if (ModelState.IsValid)
+			{
+				if (foodpic != null && foodpic.ContentLength > 0)
+				{
+					var filename = Path.GetFileName(foodpic.FileName);
+					string x1 = foodName.Name;
+					string newfilename = x1 + ".png";
+					var s = Server.MapPath("~/Image");
+					var filePath1 = Path.Combine(Server.MapPath("~/Images"), newfilename);
+					foodpic.SaveAs(filePath1);
+					db.FoodNamesTable.Add(foodName);
+					db.SaveChanges();
+				}
+				else
+				{
+					foodName.FoodItemPicName = "default.png";
+					db.FoodNamesTable.Add(foodName);
+					db.SaveChanges();
+				}
+				return RedirectToAction("Index");
+			}
+			else
+			{
+				var v = db.FoodCategoriesesTable.Select(r => r.CategoryName).Distinct();
+				ViewBag.CategoryNames = v;
+				return View(foodName);
+			}
+
+		}
 
 
     }

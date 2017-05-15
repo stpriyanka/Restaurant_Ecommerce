@@ -10,7 +10,7 @@ namespace Ecomerce_Restaurant.Controllers
     public class HomeController : Controller
     {
 
-        FoodModelsDB db = new FoodModelsDB();
+        RestaurantContext db = new RestaurantContext();
         public ActionResult Index()
         {
             return View();

@@ -14,7 +14,7 @@ namespace Ecomerce_Restaurant
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<FoodModelsDB>(new DropCreateDatabaseIfModelChanges<FoodModelsDB>());
+            Database.SetInitializer<RestaurantContext>(new DropCreateDatabaseIfModelChanges<RestaurantContext>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
