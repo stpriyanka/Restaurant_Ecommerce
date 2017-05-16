@@ -52,7 +52,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 
 
 		[Display(Name = "Total Ratings")]
-		public int TotalRatedPeople { get; set; }
+		public int RatingCount { get; set; }
 
 
 		public string FoodItemPicName { get; set; }

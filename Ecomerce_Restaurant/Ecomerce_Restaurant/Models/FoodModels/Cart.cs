@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Ecomerce_Restaurant.Models.FoodModels
 {
@@ -59,6 +60,22 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 
 			db.SaveChanges();
 		}
+
+
+
+		//public static CartExtention GetCart(HttpContextBase context)
+		//{
+		//	var cart = new CartExtention();
+
+		//	cart.ShoppingCartId = cart.GetCartId(context);
+
+		//	return cart;
+		//}
+
+		//public static CartExtention GetCart(Controller controller)
+		//{
+		//	return GetCart(controller.HttpContext);
+		//}
 
 
 	}

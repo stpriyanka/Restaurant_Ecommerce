@@ -166,6 +166,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FoodModelController\FoodCategoriesController.cs" />
+    <Compile Include="Controllers\FoodModelController\FoodNamesController.cs" />
+    <Compile Include="Controllers\FoodModelController\ShoppingCartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="Models\FoodModels\Cart.cs" />
     <Compile Include="Models\FoodModels\FoodCategories.cs" />
     <Compile Include="Models\FoodModels\FoodModelsDB.cs" />
+    <Compile Include="Models\FoodModels\ShoppingCartViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -264,6 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
