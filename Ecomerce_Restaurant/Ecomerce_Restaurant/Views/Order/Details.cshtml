@@ -1,4 +1,4 @@
-﻿@model Ecomerce_Restaurant.Models.FoodModels.FoodName
+﻿@model Ecomerce_Restaurant.Models.FoodModels.Food
 
 @{
     ViewBag.Title = "Details";
@@ -35,11 +35,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FoodPrice)
+            @Html.DisplayNameFor(model => model.Price)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FoodPrice)
+            @Html.DisplayFor(model => model.Price)
         </dd>
 
         <dt>
@@ -51,19 +51,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TotalRatedPeople)
+            @Html.DisplayNameFor(model => model.RatingCount)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TotalRatedPeople)
+            @Html.DisplayFor(model => model.RatingCount)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FoodItemPicName)
+            @Html.DisplayNameFor(model => model.FoodImageName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FoodItemPicName)
+            @Html.DisplayFor(model => model.FoodImageName)
         </dd>
 
     </dl>

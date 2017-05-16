@@ -18,7 +18,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         // GET: FoodNames
         public ActionResult Index()
         {
-            return View(db.FoodNamesTable.ToList());
+            return View(db.Foods.ToList());
         }
 
         // GET: FoodNames/Details/5
@@ -28,7 +28,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodName foodName = db.FoodNamesTable.Find(id);
+            Food foodName = db.Foods.Find(id);
             if (foodName == null)
             {
                 return HttpNotFound();
@@ -87,9 +87,9 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodName foodName = db.FoodNamesTable.Find(id);
+            Food foodName = db.Foods.Find(id);
 
-            var c= db.FoodCategoriesesTable.Select(r => r.CategoryName).ToList();
+            var c= db.FoodCategories.Select(r => r.CategoryName).ToList();
             
             return PartialView(foodName);
         }
@@ -101,9 +101,9 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(FoodName foodName, string oldpicname, HttpPostedFileBase foodpic)
+        public ActionResult Edit(Food foodName, string oldpicname, HttpPostedFileBase foodpic)
         {
-            foodName.FoodItemPicName = foodName.Name + ".png";
+            foodName.FoodImageName = foodName.Name + ".png";
 
 
             if (ModelState.IsValid)
@@ -122,11 +122,11 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
                 {
                     if (!string.IsNullOrEmpty(oldpicname))
                     {
-                        foodName.FoodItemPicName = oldpicname;
+                        foodName.FoodImageName = oldpicname;
                     }
                     else
                     {
-                        foodName.FoodItemPicName = "default.png";
+                        foodName.FoodImageName = "default.png";
                     }
                     db.Entry(foodName).State = EntityState.Modified;
                     db.SaveChanges();
@@ -134,7 +134,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
                 return RedirectToAction("Index", "FoodCategories");
 
             }
-            var c = db.FoodCategoriesesTable.Select(r => r.CategoryName).ToList();
+            var c = db.FoodCategories.Select(r => r.CategoryName).ToList();
             return View(foodName);
         }
 
@@ -145,7 +145,7 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodName foodName = db.FoodNamesTable.Find(id);
+            Food foodName = db.Foods.Find(id);
             if (foodName == null)
             {
                 return HttpNotFound();
@@ -158,8 +158,8 @@ namespace Ecomerce_Restaurant.Controllers.FoodModelController
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            FoodName foodName = db.FoodNamesTable.Find(id);
-            db.FoodNamesTable.Remove(foodName);
+            Food foodName = db.Foods.Find(id);
+            db.Foods.Remove(foodName);
             db.SaveChanges();
             return RedirectToAction("Index", "FoodCategories");
         }

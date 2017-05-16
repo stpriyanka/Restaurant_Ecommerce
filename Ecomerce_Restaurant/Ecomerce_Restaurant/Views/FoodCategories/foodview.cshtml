@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Ecomerce_Restaurant.Models.FoodModels.FoodName>
+﻿@model IEnumerable<Ecomerce_Restaurant.Models.FoodModels.Food>
 
 
 
@@ -16,16 +16,16 @@
             @Html.DisplayNameFor(model => model.FoodDescription)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FoodPrice)
+            @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FoodRating)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TotalRatedPeople)
+            @Html.DisplayNameFor(model => model.RatingCount)
         </th>
         <th>
-            @Html.DisplayNameFor(x => x.FoodItemPicName)
+            @Html.DisplayNameFor(x => x.FoodImageName)
         </th>
         <th></th>
     </tr>
@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.FoodDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FoodPrice)
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FoodRating)
@@ -51,11 +51,11 @@
             <td>
 
 
-                @Html.DisplayFor(modelItem => item.TotalRatedPeople)
+                @Html.DisplayFor(modelItem => item.RatingCount)
             </td>
             <td>
 
-                <img src="~/Images/@(item.FoodItemPicName)" height="70" width="70" />
+                <img src="~/Images/@(item.FoodImageName)" height="70" width="70" />
             </td>
             <td>
                 <div class="col-md-6">

@@ -10,8 +10,8 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 	public class RestaurantContext : DbContext
 	{
 		//FoodModelsDB
-		public DbSet<FoodCategories> FoodCategoriesesTable { get; set; }
-		public DbSet<FoodName> FoodNamesTable { get; set; }
+		public DbSet<FoodCategory> FoodCategories { get; set; }
+		public DbSet<Food> Foods { get; set; }
 		public DbSet<Cart> Carts { get; set; }
 
 	}

@@ -13,7 +13,7 @@ namespace Ecomerce_Restaurant.Controllers
         // GET: Order
         public ActionResult Index()
         {
-            return View(db.FoodNamesTable.ToList());
+            return View(db.Foods.ToList());
         }
 
         // GET: Order/Details/5
@@ -23,7 +23,7 @@ namespace Ecomerce_Restaurant.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodName foodName = db.FoodNamesTable.Find(id);
+            Food foodName = db.Foods.Find(id);
             if (foodName == null)
             {
                 return HttpNotFound();
@@ -42,11 +42,11 @@ namespace Ecomerce_Restaurant.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,CategoryName,FoodDescription,FoodPrice,FoodRating,TotalRatedPeople,FoodItemPicName")] FoodName foodName)
+        public ActionResult Create([Bind(Include = "ID,Name,CategoryName,FoodDescription,FoodPrice,FoodRating,TotalRatedPeople,FoodItemPicName")] Food foodName)
         {
             if (ModelState.IsValid)
             {
-                db.FoodNamesTable.Add(foodName);
+                db.Foods.Add(foodName);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -61,7 +61,7 @@ namespace Ecomerce_Restaurant.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodName foodName = db.FoodNamesTable.Find(id);
+            Food foodName = db.Foods.Find(id);
             if (foodName == null)
             {
                 return HttpNotFound();
@@ -74,7 +74,7 @@ namespace Ecomerce_Restaurant.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,CategoryName,FoodDescription,FoodPrice,FoodRating,TotalRatedPeople,FoodItemPicName")] FoodName foodName)
+        public ActionResult Edit([Bind(Include = "ID,Name,CategoryName,FoodDescription,FoodPrice,FoodRating,TotalRatedPeople,FoodItemPicName")] Food foodName)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace Ecomerce_Restaurant.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FoodName foodName = db.FoodNamesTable.Find(id);
+            Food foodName = db.Foods.Find(id);
             if (foodName == null)
             {
                 return HttpNotFound();
@@ -105,8 +105,8 @@ namespace Ecomerce_Restaurant.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FoodName foodName = db.FoodNamesTable.Find(id);
-            db.FoodNamesTable.Remove(foodName);
+            Food foodName = db.Foods.Find(id);
+            db.Foods.Remove(foodName);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

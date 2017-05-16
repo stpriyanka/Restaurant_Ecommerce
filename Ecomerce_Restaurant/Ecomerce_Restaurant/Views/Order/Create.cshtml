@@ -1,4 +1,4 @@
-﻿@model Ecomerce_Restaurant.Models.FoodModels.FoodName
+﻿@model Ecomerce_Restaurant.Models.FoodModels.Food
 
 @{
     ViewBag.Title = "Create";
@@ -40,10 +40,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FoodPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FoodPrice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FoodPrice, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -56,18 +56,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TotalRatedPeople, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RatingCount, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TotalRatedPeople, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TotalRatedPeople, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RatingCount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RatingCount, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FoodItemPicName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FoodImageName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FoodItemPicName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FoodItemPicName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.FoodImageName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FoodImageName, "", new { @class = "text-danger" })
             </div>
         </div>
 
