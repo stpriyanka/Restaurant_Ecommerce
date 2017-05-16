@@ -58,11 +58,10 @@
 	    <td>
 			<img src="~/Images/@(item.FoodItemPicName)" style="text-align: center" height="50" width="50" />
 	    </td>
-        <td>
-            @Html.ActionLink("Add to cart", "Edit", new { id=item.ID }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
-            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
-        </td>
+		<td>
+			@Html.ActionLink("Add to cart", "Edit", new { id = item.ID })
+			<input id="IsSelected" name="IsSelected" type="checkbox" value=false />
+		</td>
     </tr>
 }
 
