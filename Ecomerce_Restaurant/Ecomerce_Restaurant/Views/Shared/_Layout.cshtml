@@ -50,12 +50,15 @@
 					<li><a id="navLocation" class="btn btn-group-justified" href="@Url.Action("Contact", "Home")" role="button">LOCATION</a></li>
 					<li>@Html.ActionLink("Order Page", "Index", "Order")</li>
 					@*@if (Request.IsAuthenticated)
-					{
-						<li>@Html.ActionLink("ADMIN", "Index", "FoodCategories")</li>
-					}*@
+						{
+							<li>@Html.ActionLink("ADMIN", "Index", "FoodCategories")</li>
+						}*@
 
 
 					<li>@Html.ActionLink("ADMIN", "Index", "FoodCategories")</li>
+
+					<li>@Html.ActionLink("Payment", "Index", "Payment")</li>
+
 
 					@using (Html.BeginForm("SearchView", "Home"))
 					{

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecomerce_Restaurant.Models.FoodModels
 {
@@ -35,6 +36,9 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 		public int RatingCount { get; set; }
 
 		public string FoodImageName { get; set; }
+
+		[NotMapped]
+		public double TotalPrice { get; set; }
 
 	}
 }

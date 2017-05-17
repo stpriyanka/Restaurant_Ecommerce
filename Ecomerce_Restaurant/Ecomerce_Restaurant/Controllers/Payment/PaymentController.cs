@@ -21,12 +21,17 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 
 			var distinctList = foodIds.Distinct().ToList();
 			Dictionary<Food, int> orderedItems = new Dictionary<Food, int>();
-			
+
 			foreach (var id in distinctList)
 			{
 				int count = foodIds.Count(i => i.Equals(id));
 				var food = _db.Foods.FirstOrDefault(x => x.ID == id);
-				if (food != null) orderedItems.Add(food,count);
+
+				if (food == null)
+					continue;
+
+				food.TotalPrice = food.Price * count;
+				orderedItems.Add(food, count);
 			}
 
 			return View(orderedItems);
