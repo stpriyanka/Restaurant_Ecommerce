@@ -12,35 +12,35 @@
 
 
 	<table class="table">
-			<tr class="label-info">
-				<th>
-					@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().Name)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().CategoryName)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().FoodDescription)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().Price)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().FoodRating)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().RatingCount)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().FoodImageName)
-				</th>
-				<th>
-					Quantity
-				</th>
-				<th>
-					Total Price
-				</th>
-			</tr>
+		<tr class="label-info">
+			<th>
+				@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().Name)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().CategoryName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().FoodDescription)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().Price)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().FoodRating)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().RatingCount)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Keys.FirstOrDefault().FoodImageName)
+			</th>
+			<th>
+				Quantity
+			</th>
+			<th>
+				Total Price
+			</th>
+		</tr>
 		@foreach (var item in Model)
 		{
 			<tr>
@@ -71,22 +71,25 @@
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Key.TotalPrice)
-
-
 					</td>
 				</ul>
 			</tr>
-
 		}
 	</table>
+	<div class="container">
+		<div class="row">
+			<hr>
+			<div class="col-md-6">Total cost</div>
+			
+			<div class="col-md-6"><span class="pull-right">@ViewBag.amount</span>
+			</div>
+			
+
+			<div>
+			@Html.ActionLink("Confirm Payment", "PaymentConfirmation",  new { totalAmoutToPay =@ViewBag.amount })	
+			</div>
+		</div>
+	</div>
 </div>
 
-<p>
 
-	@using (Html.BeginForm("Index", "Payment"))
-	{
-		<input type="hidden" id="list" name="itemIds" />
-		<input type="submit" value="Pay" class="btn btn-success" onclick="chkout()" />
-	}
-
-</p>

@@ -7,17 +7,18 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 	{
 
 		[Key]
-		[Index]
+		//[Index]
 		public int ID { get; set; }
 
 
 		[Required]
-		[Display(Name = "Food Name")]
+		[Display(Name = "Name")]
 		public string Name { get; set; }
 
 
 		[Required]
-		[Index]
+		//[Index]
+		[Display(Name = "Category")]
 		public string CategoryName { get; set; }
 
 
@@ -38,10 +39,15 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 		[Display(Name = "Total Ratings")]
 		public int RatingCount { get; set; }
 
+		[Display(Name = "Image")]
 		public string FoodImageName { get; set; }
 
 		[NotMapped]
 		public double TotalPrice { get; set; }
+
+		[NotMapped]
+		[Display(Name = "TotalAmountToPay")]
+		public double TotalAmountToPay { get; set; }
 
 	}
 }

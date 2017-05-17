@@ -5,9 +5,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 {
 	public class FoodCategory
 	{
-
 		[Key]
-		[Index]
 		public int ID { get; set; }
 
 		[Required]

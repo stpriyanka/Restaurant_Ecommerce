@@ -7,7 +7,7 @@
 
 <p class="pull-right">
 
-	<div class="btn-info alert-success clearfix">
+	<div class="">
 		<span id="mycart" class="btn btn-primary btn-lg pull-right">0</span>
 
 		@using (Html.BeginForm("Index", "Payment"))
@@ -21,7 +21,7 @@
 
 		</p>
 		<table class="table">
-			<tr>
+			<tr class="success">
 				<th>
 					@Html.DisplayNameFor(model => model.Name)
 				</th>
@@ -48,7 +48,7 @@
 
 			@foreach (var item in Model)
 			{
-				<tr>
+				<tr class="btn-warning alert-info">
 					<td>
 						@Html.DisplayFor(modelItem => item.Name)
 					</td>
@@ -102,4 +102,5 @@
 				document.getElementById("list").value = itemlist;
 			};
 		</script>
-		<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+

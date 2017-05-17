@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "PaymentConfirmation";
+}
+
+<h2>Confirm payment</h2>
+
+@using (Html.BeginForm())
+{
+	<input type="text" name="name" placeholder="Enter name......"/>
+	<br/>
+	<span><strong>Toal:</strong>@ViewBag.amount</span>
+	<input type="hidden" name="amount" value="@ViewBag.amount"  />
+	<hr/>
+	<br/>
+	<input type="submit" value="To paypal paymment" />
+}
+
