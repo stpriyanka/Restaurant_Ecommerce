@@ -181,6 +181,7 @@
     <Compile Include="Models\FoodModels\Cart.cs" />
     <Compile Include="Models\FoodModels\FoodCategory.cs" />
     <Compile Include="Models\FoodModels\Food.cs" />
+    <Compile Include="Models\FoodModels\OrderStatus.cs" />
     <Compile Include="Models\FoodModels\RestaurantContext.cs" />
     <Compile Include="Models\FoodModels\ShoppingCartViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />

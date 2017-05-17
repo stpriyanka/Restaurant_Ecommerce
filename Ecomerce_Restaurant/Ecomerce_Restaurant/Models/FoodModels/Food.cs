@@ -7,6 +7,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 	{
 
 		[Key]
+		[Index]
 		public int ID { get; set; }
 
 
@@ -16,6 +17,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 
 
 		[Required]
+		[Index]
 		public string CategoryName { get; set; }
 
 
@@ -29,6 +31,7 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 
 
 		[Display(Name = "Current Rating")]
+		[Index]
 		public double FoodRating { get; set; }
 
 

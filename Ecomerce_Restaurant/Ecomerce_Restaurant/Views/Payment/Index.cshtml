@@ -7,9 +7,9 @@
 
 
 <div>
-    <h4>Foods you have selected</h4>
+	<h4>Foods you have selected</h4>
 	<hr />
-	
+
 
 	<table class="table">
 		<tr>
@@ -78,6 +78,15 @@
 	</table>
 </div>
 <p>
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
-    @Html.ActionLink("Back to List", "Index")
+
+	@using (Html.BeginForm("Index", "Payment"))
+	{
+		<input type="hidden" id="list" name="itemIds" />
+		<input type="submit" value="Pay" class="btn btn-success" onclick="chkout()" />
+	}
+
+</p>
+
+<p>
+    @*@Html.ActionLink("Back to List", "Index")*@
 </p>

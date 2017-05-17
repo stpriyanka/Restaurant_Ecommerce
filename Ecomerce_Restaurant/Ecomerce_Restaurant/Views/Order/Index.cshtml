@@ -6,13 +6,21 @@
 }
 
 <p class="pull-right">
-	<span id="mycart" class="btn btn-info">0</span>
 
-	@using (Html.BeginForm("Index", "Payment"))
-	{
-		<input type="hidden" id="list" name="itemIds" />
-		<input type="submit" value="checkout" class="btn btn-success" onclick="chkout()" />
-	}
+
+
+	<div class="btn-info alert-success clearfix">
+
+		@using (Html.BeginForm("Index", "Payment"))
+		{
+			<input type="hidden" id="list" name="itemIds" />
+			<input type="submit" value="checkout" class="btn btn-primary btn-lg pull-right" onclick="chkout()" />
+		}
+
+		<span id="mycart" class="btn btn-primary btn-lg pull-right">0</span>
+
+	</div>
+
 
 </p>
 <table class="table">
@@ -66,8 +74,8 @@
 				<img src="~/Images/@(item.FoodImageName)" style="text-align: center" height="50" width="50" />
 			</td>
 			<td>
-				<input type="button" value="add to cart" onclick="cartOperation(@item.ID,'add')" />
-				<input type="button" value="remove" onclick="cartOperation(@item.ID,'remove')" />
+				<input type="button" value="   Add   " class="btn btn-success" onclick="cartOperation(@item.ID,'add')" />
+				<input type="button" value="Remove" class="btn btn-danger" onclick="cartOperation(@item.ID,'remove')" />
 			</td>
 		</tr>
 
