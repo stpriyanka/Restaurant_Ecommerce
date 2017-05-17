@@ -56,8 +56,10 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 			                   string redirecturl = "";
 
 			//Mention URL to redirect content to paypal site
-			redirecturl += "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" +
-						   "priyanka_tasnia@yahoo.com";
+			redirecturl += "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" + "priyanka_tasnia@yahoo.com";
+				//"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" +
+				//		   "priyanka_tasnia@yahoo.com";
+
 
 			//First name i assign static based on login details assign this value
 			redirecturl += "&first_name=" + name;
@@ -100,6 +102,23 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 
 			////Currency code 
 			redirecturl += "&currency=" + "SEK";
+
+
+			///-----------------------------
+			/// //string path = ConfigurationManager.AppSettings["BaseURL"].ToString() ;
+			//string businessPaypalId = "bill_1324043702_biz@sdsol.com";
+			//string redirect = "";
+			//redirect += "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" + businessPaypalId;
+			//redirect += "&item_name=" + BuyDetail[0].ToString();
+			//redirect += "&amount=" + String.Format("{0:0.00} ", BuyDetail[3].ToString());
+			//redirect += "&item_number=1";
+			//redirect += "&currency_code=USD";
+
+			//redirect += "&return="+path+"/BuyPayPal.aspx";
+			//redirect += "&cancel_return=" + path + "/BuyPayPal.aspx";
+			//redirect += "&notify_url=" + path + "/BuyPayPal.aspx";
+			//redirect += "&custom=" + Did.ToString();
+			//Response.Redirect(redirect);
 
 			Response.Redirect(redirecturl);
 		}
