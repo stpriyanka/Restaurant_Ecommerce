@@ -1,18 +1,145 @@
-﻿
-@{
-    ViewBag.Title = "PaymentConfirmation";
+﻿@{
+	ViewBag.Title = "PaymentConfirmation";
 }
+
+<link href="~/Content/CustomCSS/RequiredField.css" rel="stylesheet" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <h2>Confirm payment</h2>
 
 @using (Html.BeginForm())
 {
-	<input type="text" name="name" placeholder="Enter name......"/>
-	<br/>
-	<span><strong>Toal:</strong>@ViewBag.amount</span>
-	<input type="hidden" name="amount" value="@ViewBag.amount"  />
-	<hr/>
-	<br/>
-	<input type="submit" value="To paypal paymment" />
+	<legend>Customer Details</legend>
+
+	<div class="container">
+
+		<form class="form-horizontal">
+	
+			<div class="form-group row">
+				<label for="example-text-input" class="col-2 col-form-label">Full Name </label>
+				<div class="col-10">
+					<input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="example-search-input" class="col-2 col-form-label">Personal Identity Number</label>
+				<div class="col-10">
+					<input type="text" class="form-control" id="personNumber" placeholder="Enter personNumber" name="personNumber">
+				</div>
+				<div class="required-icon">
+					<div class="text">*</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-text-input" class="col-2 col-form-label">Mobile</label>
+				<div class="col-10">
+					<input type="text" class="form-control" id="phoneNumber" placeholder="Enter phoneNumber" name="phoneNumber">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="example-search-input" class="col-2 col-form-label">Total Amount To Pay</label>
+				<div class="col-10">
+					<p class="form-control-static">@ViewBag.amount</p>
+					<input type="hidden" name="amount" value="@ViewBag.amount" />
+				</div>
+			</div>
+
+			<fieldset class="form-group row">
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						Eat here
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+						Take Away
+					</label>
+				</div>
+			</fieldset>
+
+			<div class="form-group row">
+			<div class="form-check">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input">
+						All rights reserved to the owner
+					</label>
+				</div>
+				<div class="col-10">
+					<input type="submit" class="btn btn-info" value="Checkout To paypal ">
+				</div>
+			</div>
+		</form>
+	</div>
 }
 
+<div class="container">
+	<div class="row">
+		<br />
+		<form>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-envelope fa-10x"></i></span>
+				<input type="text" class="form-control" id="name" placeholder="Name" name="name" required="required">
+			</div>
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-key fa-10x"></i></span>
+				<label for="example-search-input" class="col-2 col-form-label">Personal Identity Number</label>
+				<input type="text" class="form-control" id="personNumber" placeholder="Enter personNumber" name="personNumber" required="required">
+				</div>
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-envelope fa-10x"></i></span>
+				<label for="example-text-input" class="col-2 col-form-label">Mobile</label>
+				
+				<input type="text" class="form-control" id="phoneNumber" placeholder="Enter phoneNumber" name="phoneNumber" required="required">
+				</div>
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-key fa-10x"></i></span>
+				<label for="example-search-input" class="col-2 col-form-label">Total Amount To Pay</label>
+					<p class="form-control-static">@ViewBag.amount</p>
+					<input type="hidden" name="amount" value="@ViewBag.amount" />
+				</div>
+			<br />
+			<fieldset class="form-group row">
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						Eat here
+					</label>
+				</div>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+						Take Away
+					</label>
+				</div>
+			</fieldset>
+			<br/>
+
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-envelope fa-10x"></i></span>
+				<div class="form-check">
+					<label class="form-check-label">
+						<input type="checkbox" class="form-check-input">
+						All rights reserved to the owner
+					</label>
+				</div>
+			</div>
+			<br />
+			
+
+			<br />
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div>
+<style>
+	    :required  {  
+	 background: url(https://cdn0.iconfinder.com/data/icons/fugue/icon/asterisk-small.png) no-repeat;
+	 background-position:right top;
+	}
+</style>

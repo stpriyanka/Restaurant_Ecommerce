@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web.Mvc;
 using Ecomerce_Restaurant.Models.FoodModels;
@@ -31,14 +33,18 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 
 				if (food == null)
 					continue;
-				
+
 				food.TotalPrice = food.Price * count;
 				//food.TotalAmountToPay += food.TotalPrice;
 				amountToPay += food.TotalPrice;
-				ViewBag.amount= amountToPay;
+				ViewBag.amount = amountToPay;
+
 				//food.TotalAmountToPay = amountToPay;
 				orderedItems.Add(food, count);
 			}
+
+			//buyer.FoodIDs = distinctList;
+			//buyer.
 
 			return View(orderedItems);
 		}
@@ -50,15 +56,15 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 		}
 
 		[HttpPost]
-		public void PaymentConfirmation(string name,string amount)
+		public void PaymentConfirmation(string name, string amount, string personNumber, string phoneNumber)
 		{
 
-			                   string redirecturl = "";
+			string redirecturl = "";
 
 			//Mention URL to redirect content to paypal site
 			redirecturl += "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" + "priyanka_tasnia@yahoo.com";
-				//"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" +
-				//		   "priyanka_tasnia@yahoo.com";
+			//"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" +
+			//		   "priyanka_tasnia@yahoo.com";
 
 
 			//First name i assign static based on login details assign this value
@@ -101,8 +107,9 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 			redirecturl += "&quantity=1";
 
 			////Currency code 
-			redirecturl += "&currency=" + "SEK";
+			redirecturl += "&currency_code=" + "SEK";
 
+			redirecturl += "&item_number=1" + personNumber; //to identify payment from list
 
 			///-----------------------------
 			/// //string path = ConfigurationManager.AppSettings["BaseURL"].ToString() ;
@@ -120,7 +127,50 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 			//redirect += "&custom=" + Did.ToString();
 			//Response.Redirect(redirect);
 
+			//Ger buyer info and store somewhere 
+
+			WrappedBuyerInfo buyer = new WrappedBuyerInfo()
+			{
+				Name = name,
+				PaidAmount = double.Parse(amount, System.Globalization.CultureInfo.InvariantCulture),
+				UniquePaymentID = Guid.NewGuid(),
+				PhoneNumber = phoneNumber,
+				PersonNumber = personNumber,
+
+			};
+
+
 			Response.Redirect(redirecturl);
 		}
+	}
+
+
+	public class WrappedBuyerInfo
+	{
+		[NotMapped]
+		public Guid UniquePaymentID { get; set; }
+
+
+		[NotMapped]
+		public string Name { get; set; }
+
+		[NotMapped]
+		public string PhoneNumber { get; set; }
+
+		[NotMapped]
+		public string PersonNumber { get; set; }
+
+
+		[NotMapped]
+		public List<int> FoodIDs { get; set; }
+
+
+		[NotMapped]
+		public int NumberOfItems { get; set; }
+
+
+		[NotMapped]
+		public double PaidAmount { get; set; }
+
 	}
 }
