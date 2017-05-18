@@ -4,12 +4,8 @@
 	ViewBag.Title = "Almost Finish";
 }
 
-
-
 <div>
-	<h4>Foods you have selected</h4>
-	<hr />
-
+<legend>Your Cart</legend>
 
 	<table class="table">
 		<tr class="label-info">
@@ -76,18 +72,18 @@
 			</tr>
 		}
 	</table>
+
 	<div class="container">
 		<div class="row">
 			<hr>
-			<div class="col-md-6">Total cost</div>
-			
-			<div class="col-md-6"><span class="pull-right">@ViewBag.amount</span>
-			</div>
-			
-
-			<div>
-			@Html.ActionLink("Confirm Payment", "PaymentConfirmation",  new { totalAmoutToPay =@ViewBag.amount })	
-			</div>
+			<form class="input-group">
+				<div class="form-group">
+					<label class="form-control-static col-sm-12" for="amount">Total Amount: <i class="fa fa-money"></i> @ViewBag.amount</label>
+					<div class="form-group">
+						<button type="button" class="btn btn-default btn-block "><i class="fa fa-shopping-cart"></i> @Html.ActionLink("Confirm Payment", "PaymentConfirmation", new { totalAmoutToPay = @ViewBag.amount })	</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

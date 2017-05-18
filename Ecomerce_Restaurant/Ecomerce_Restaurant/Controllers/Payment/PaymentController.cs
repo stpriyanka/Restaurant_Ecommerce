@@ -58,7 +58,8 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 		[HttpPost]
 		public void PaymentConfirmation(string name, string amount, string personNumber, string phoneNumber)
 		{
-
+			var path = "http://localhost:44305/";
+		
 			string redirecturl = "";
 
 			//Mention URL to redirect content to paypal site
@@ -110,9 +111,10 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 			redirecturl += "&currency_code=" + "SEK";
 
 			redirecturl += "&item_number=1" + personNumber; //to identify payment from list
+			
+			redirecturl += "&return="+path;
 
-			///-----------------------------
-			/// //string path = ConfigurationManager.AppSettings["BaseURL"].ToString() ;
+			//string path = ConfigurationManager.AppSettings["BaseURL"].ToString() ;
 			//string businessPaypalId = "bill_1324043702_biz@sdsol.com";
 			//string redirect = "";
 			//redirect += "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=" + businessPaypalId;
@@ -121,7 +123,6 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 			//redirect += "&item_number=1";
 			//redirect += "&currency_code=USD";
 
-			//redirect += "&return="+path+"/BuyPayPal.aspx";
 			//redirect += "&cancel_return=" + path + "/BuyPayPal.aspx";
 			//redirect += "&notify_url=" + path + "/BuyPayPal.aspx";
 			//redirect += "&custom=" + Did.ToString();

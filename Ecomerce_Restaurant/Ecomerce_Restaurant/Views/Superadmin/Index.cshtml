@@ -1,0 +1,41 @@
+﻿@model Dictionary<string, string>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+	@Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+	<tr>
+		<th>username</th>
+		<th>role</th>
+		<th></th>
+	</tr>
+
+
+	@foreach (var item in Model)
+	{
+		using (Html.BeginForm("updateRole", "Superadmin"))
+		{
+			<input type="hidden" name="userName" value="@item.Key" />
+			<input type="hidden" name="oldRole" value="@item.Value" />
+			<tr>
+				<td>@item.Key</td>
+				<td>
+					@item.Value
+					<br />
+					@Html.DropDownList("new_role", new SelectList(@ViewBag.roles))
+				</td>
+				<td>
+
+					<input type="submit" value="update" />
+				</td>
+			</tr>
+		}
+	}
+
+</table>

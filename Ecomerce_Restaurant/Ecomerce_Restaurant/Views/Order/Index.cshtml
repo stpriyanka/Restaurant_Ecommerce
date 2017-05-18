@@ -5,102 +5,99 @@
 	ViewBag.Title = "Index";
 }
 
-<p class="pull-right">
+
+<table class="table">
+	<tr class="success">
+		<th>
+			@Html.DisplayNameFor(model => model.Name)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.CategoryName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.FoodDescription)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Price)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.FoodRating)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.RatingCount)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.FoodImageName)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr class="btn-default">
+			<td>
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CategoryName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.FoodDescription)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Price)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.FoodRating)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.RatingCount)
+			</td>
+			<td>
+				<img src="~/Images/@(item.FoodImageName)" style="text-align: center" height="50" width="50" />
+			</td>
+			<td>
+				<input type="button" value="   Add   " class="btn btn-success" onclick="cartOperation(@item.ID,'add')" />
+				<input type="button" value="Remove" class="btn btn-danger" onclick="cartOperation(@item.ID,'remove')" />
+			</td>
+		</tr>
+	}
+
+</table>
+<p class="input-group">
 
 	<div class="">
-		<span id="mycart" class="btn btn-primary btn-lg pull-right">0</span>
-
 		@using (Html.BeginForm("Index", "Payment"))
 		{
 			<input type="hidden" id="list" name="itemIds" />
-
-			<input type="submit" value="checkout" class="btn btn-primary btn-lg pull-right" onclick="chkout()" />
+			<div class="container">
+				<button type="submit" onclick="chkout()" class="btn btn-default btn-lg"><i class="fa fa-arrow-right"></i> Checkout <span id="mycart" class="badge">5</span></button>
+			</div>
 		}
-		</div>
+	</div>
+</p>
+<script>
+	var itemlist = [];
+	var cartOperation = function (input, operation) {
 
+		if (operation == "add") {
+			itemlist.push(input);
+		}
 
-		</p>
-		<table class="table">
-			<tr class="success">
-				<th>
-					@Html.DisplayNameFor(model => model.Name)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.CategoryName)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.FoodDescription)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.Price)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.FoodRating)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.RatingCount)
-				</th>
-				<th>
-					@Html.DisplayNameFor(model => model.FoodImageName)
-				</th>
-				<th></th>
-			</tr>
-
-			@foreach (var item in Model)
-			{
-				<tr class="btn-warning alert-info">
-					<td>
-						@Html.DisplayFor(modelItem => item.Name)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.CategoryName)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.FoodDescription)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.Price)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.FoodRating)
-					</td>
-					<td>
-						@Html.DisplayFor(modelItem => item.RatingCount)
-					</td>
-					<td>
-						<img src="~/Images/@(item.FoodImageName)" style="text-align: center" height="50" width="50" />
-					</td>
-					<td>
-						<input type="button" value="   Add   " class="btn btn-success" onclick="cartOperation(@item.ID,'add')" />
-						<input type="button" value="Remove" class="btn btn-danger" onclick="cartOperation(@item.ID,'remove')" />
-					</td>
-				</tr>
+		if (operation == "remove") {
+			if (itemlist.length > 0 && itemlist.indexOf(input) != -1) {
+				itemlist.splice(itemlist.indexOf(input), 1);
 			}
+		}
+		cartoperation();
+	};
+	var cartoperation = function () {
+		var cartbtn = document.querySelector('#mycart');
+		cartbtn.textContent = itemlist.length;
+	};
 
-		</table>
-		<script>
-			var itemlist = [];
-			var cartOperation = function (input, operation) {
-
-				if (operation == "add") {
-					itemlist.push(input);
-				}
-
-				if (operation == "remove") {
-					if (itemlist.length > 0 && itemlist.indexOf(input) != -1) {
-						itemlist.splice(itemlist.indexOf(input), 1);
-					}
-				}
-				cartoperation();
-			};
-			var cartoperation = function () {
-				var cartbtn = document.querySelector('#mycart');
-				cartbtn.textContent = itemlist.length;
-			};
-
-			var chkout = function () {
-				document.getElementById("list").value = itemlist;
-			};
-		</script>
+	var chkout = function () {
+		document.getElementById("list").value = itemlist;
+	};
+</script>
 <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-
