@@ -27,12 +27,15 @@
 			height: 500px;
 		}
 	</style>
-
 	<title>Facebook share sampel</title>
 	<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"
-			type="text/javascript">
+	        type="text/javascript">
 	</script>
+
+	<!--Script references. -->
+	<!--Reference the jQuery library. -->
+
 </head>
 
 <body>
@@ -62,6 +65,7 @@
 				<ul class="nav navbar-nav">
 					<li><a id="navHome" class="btn btn-group-justified" href="@Url.Action("Index", "Home")" role="button">Home</a></li>
 					<li><a id="navLocation" class="btn btn-group-justified" href="@Url.Action("Contact", "Home")" role="button">Location</a></li>
+					<li><a id="navLocation" class="btn btn-group-justified" href="@Url.Action("About", "Home")" role="button">About</a></li>
 					<li>@Html.ActionLink("Order", "Index", "Order")</li>
 					@*@if (Request.IsAuthenticated)
 						{

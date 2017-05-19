@@ -230,3 +230,9 @@ C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerc
 C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.csprojResolveAssemblyReference.cache
 C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.dll
 C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Debug\Ecomerce_Restaurant.pdb
+C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Owin.dll
+C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Owin.xml
+C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
