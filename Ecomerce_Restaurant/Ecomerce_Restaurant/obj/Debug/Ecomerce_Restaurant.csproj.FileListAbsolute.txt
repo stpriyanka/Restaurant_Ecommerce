@@ -236,3 +236,9 @@ C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerc
 C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Owin.xml
 C:\git_repo\RestaurantEcommerce\Restaurant_Ecommerce\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Owin.dll
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Owin.xml
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.SystemWeb.xml

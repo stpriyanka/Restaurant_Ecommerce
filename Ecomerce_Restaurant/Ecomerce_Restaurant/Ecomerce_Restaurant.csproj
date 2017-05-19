@@ -241,6 +241,7 @@
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chatScript.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -312,6 +313,7 @@
     <Content Include="Views\Payment\Index.cshtml" />
     <Content Include="Views\Payment\PaymentConfirmation.cshtml" />
     <Content Include="Views\Superadmin\Index.cshtml" />
+    <Content Include="Views\Shared\_chatView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

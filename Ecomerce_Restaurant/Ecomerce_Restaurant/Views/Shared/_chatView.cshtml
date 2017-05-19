@@ -1,0 +1,19 @@
+﻿
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<!--Reference the SignalR library. -->
+<script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+@*<script src="~/signalr/hubs"></script>*@
+<!--Add script to update the page and send messages.-->
+<script src="http://localhost:44305/signalr/hubs"></script>
+
+
+
+
+<div style="margin-bottom: 20px !important;border: 1px solid teal">
+	<input type="hidden" id="displayname" />
+	<ul id="discussion" style="overflow-y: scroll;	height: 200px !important;"></ul>
+	<input type="text" id="message" />
+	<input type="button" id="sendmessage" value="Send" />
+</div>
+
+
