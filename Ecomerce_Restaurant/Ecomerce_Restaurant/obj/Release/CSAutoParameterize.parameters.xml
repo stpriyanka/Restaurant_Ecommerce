@@ -3,7 +3,4 @@
   <parameter name="RestaurantContext-Web.config Connection String" description="RestaurantContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=.\SQLEXPRESS;Initial Catalog=RestaurantContext;Integrated Security=SSPI" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\github\\Software-Development-For-Cloud\\Ecomerce_Restaurant\\Ecomerce_Restaurant\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RestaurantContext']/@connectionString" />
   </parameter>
-  <parameter name="Ecomerce_Restaurant.Models.ApplicationDbContext-Web.config Connection String" description="Ecomerce_Restaurant.Models.ApplicationDbContext Connection String used in web.config by the application to access the database." defaultValue="Ecomerce_Restaurant.Models.ApplicationDbContext_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\github\\Software-Development-For-Cloud\\Ecomerce_Restaurant\\Ecomerce_Restaurant\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Ecomerce_Restaurant.Models.ApplicationDbContext']/@connectionString" />
-  </parameter>
 </parameters>

@@ -30,10 +30,6 @@ namespace Ecomerce_Restaurant.Models
         {
             return new ApplicationDbContext();
         }
-
-		//public void Dispose()
-		//{
-		//	throw new NotImplementedException();
-		//}
     }
 }
+///DO not add dispose casued broken links

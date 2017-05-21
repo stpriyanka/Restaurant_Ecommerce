@@ -32,6 +32,8 @@ C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\System.Web.WebPages.dll
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\System.Web.WebPages.Razor.dll
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\WebGrease.dll
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\EntityFramework.xml
+C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\EntityFramework.SqlServer.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.Owin.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
@@ -48,8 +50,6 @@ C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\System.Web.WebPages.Razor.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Antlr3.Runtime.pdb
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Newtonsoft.Json.xml
-C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\EntityFramework.xml
-C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\EntityFramework.SqlServer.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.Identity.Core.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -62,4 +62,3 @@ C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Release\Ecomerce_Restaurant.dll
 C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Release\Ecomerce_Restaurant.pdb
-C:\github\Software-Development-For-Cloud\Ecomerce_Restaurant\Ecomerce_Restaurant\obj\Release\Ecomerce_Restaurant.csprojResolveAssemblyReference.cache
