@@ -11,9 +11,6 @@ var getName = function () {
 $(function () {
 	console.log($.connection);
 
-	var time = new Date();
-	var currentTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
-	console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
 
 
 	// Declare a proxy to reference the hub.
@@ -28,9 +25,15 @@ $(function () {
 		var encodedName = name;
 		var encodedMsg = $('<div />').text(message).html();
 
+		var time = new Date();
+		var currentTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+		console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+
 		// Add the message to the page.
 		$('#discussion').append('<li><strong>' + encodedName
-			+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:'+'&nbsp;&nbsp;' + currentTime + '</li>');
+			+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:' + '&nbsp;&nbsp;' + currentTime + '</li>');
+
+		//$('#time').append(currentTime);
 
 		return;
 	}
