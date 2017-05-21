@@ -10,13 +10,18 @@
 						</a>
 					</div>
 				</div>
-				<div class="panel-collapse collapse"  id="collapseOne" style="display: block">
+				<div class="panel-collapse collapse" id="collapseOne" style="display: block">
 					<div class="panel-body">
 						<ul class="chat">
 							<li class="left clearfix">
 								<div class="chat-body clearfix">
-									<input type="hidden" id="displayname" />
-									<ul id="discussion"></ul>
+									<div class="col-xs-8">
+										<input type="hidden" id="displayname" />
+										<ul id="discussion"></ul>
+									</div>
+									@*<div class="col-xs-4">
+										<ul class="text-muted" id="time"></ul> <br />
+									</div>*@
 								</div>
 							</li>
 						</ul>
@@ -39,58 +44,53 @@
 <script src="~/Scripts/CustomScript.js"></script>
 
 <style>
-		.chat {
-			list-style: none;
-			margin: 0;
-			padding: 0;
+	.chat {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+		.chat li {
+			margin-bottom: 10px;
+			padding-bottom: 5px;
+			/*border-bottom: 1px dotted #B3A9A9;*/
 		}
 
-			.chat li {
-				margin-bottom: 10px;
-				padding-bottom: 5px;
-				/*border-bottom: 1px dotted #B3A9A9;*/
+			.chat li.left .chat-body {
+				margin-left: 0px;
 			}
 
-				.chat li.left .chat-body {
-					margin-left: 0px;
-				}
-
-				.chat li.right .chat-body {
-					margin-right: 5px;
-				}
-
-
-				.chat li .chat-body p {
-					margin: 0;
-					color: #777777;
-				}
-
-			.panel .slidedown .glyphicon, .chat .glyphicon {
+			.chat li.right .chat-body {
 				margin-right: 5px;
 			}
 
-		.panel-body {
-			overflow-y: scroll;
-			height: 230px;
+
+			.chat li .chat-body p {
+				margin: 0;
+				color: #777777;
+			}
+
+		.panel .slidedown .glyphicon, .chat .glyphicon {
+			margin-right: 5px;
 		}
 
-::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}
+	.panel-body {
+		overflow-y: scroll;
+		height: 230px;
+	}
 
-::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
+	::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+		background-color: #F5F5F5;
+	}
 
-::-webkit-scrollbar-thumb
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
+	::-webkit-scrollbar {
+		width: 12px;
+		background-color: #F5F5F5;
+	}
 
-
+	::-webkit-scrollbar-thumb {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+		background-color: #555;
+	}
 </style>

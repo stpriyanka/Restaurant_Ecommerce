@@ -31,9 +31,9 @@ namespace Ecomerce_Restaurant.Models
             return new ApplicationDbContext();
         }
 
-	    public void Dispose()
-	    {
-		    throw new NotImplementedException();
-	    }
+		//public void Dispose()
+		//{
+		//	throw new NotImplementedException();
+		//}
     }
 }
