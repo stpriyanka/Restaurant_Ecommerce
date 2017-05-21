@@ -11,10 +11,19 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 	{
 		readonly RestaurantContext _db = new RestaurantContext();
 
+		public ActionResult CartMessage()
+		{
+			return View();
+		}
+
 		// GET: Payment
 		[HttpPost]
 		public ActionResult Index(string[] itemIds)
 		{
+			if (itemIds == null || itemIds.FirstOrDefault() == string.Empty || !itemIds.Any())
+			{
+				return View("CartMessage");
+			}
 			var foodIds = new List<int>();
 			if (itemIds.ToList().Count > 0)
 			{
@@ -58,8 +67,8 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 		[HttpPost]
 		public void PaymentConfirmation(string name, string amount, string personNumber, string phoneNumber)
 		{
-			var path = "http://localhost:44305/";
-		
+			var path = "http://dhakafood.azurewebsites.net/";
+
 			string redirecturl = "";
 
 			//Mention URL to redirect content to paypal site
@@ -111,8 +120,8 @@ namespace Ecomerce_Restaurant.Controllers.Payment
 			redirecturl += "&currency_code=" + "SEK";
 
 			redirecturl += "&item_number=1" + personNumber; //to identify payment from list
-			
-			redirecturl += "&return="+path;
+
+			redirecturl += "&return=" + path;
 
 			//string path = ConfigurationManager.AppSettings["BaseURL"].ToString() ;
 			//string businessPaypalId = "bill_1324043702_biz@sdsol.com";

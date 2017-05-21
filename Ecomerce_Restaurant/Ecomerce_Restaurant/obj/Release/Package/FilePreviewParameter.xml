@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="dhakafood" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\github\\Software-Development-For-Cloud\\Ecomerce_Restaurant\\Ecomerce_Restaurant\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\github\\Software-Development-For-Cloud\\Ecomerce_Restaurant\\Ecomerce_Restaurant\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Ecomerce_Restaurant.Models.ApplicationDbContext-Web.config Connection String" description="" value="Ecomerce_Restaurant.Models.ApplicationDbContext_ConnectionString" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\github\\Software-Development-For-Cloud\\Ecomerce_Restaurant\\Ecomerce_Restaurant\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Ecomerce_Restaurant.Models.ApplicationDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="RestaurantContext-Web.config Connection String" description="" value="Data Source=tcp:dhakafood.database.windows.net,1433;Initial Catalog=RestaurantContext;User Id=dfuser@dhakafood.database.windows.net;Password=Dbuser12@" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\github\\Software-Development-For-Cloud\\Ecomerce_Restaurant\\Ecomerce_Restaurant\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RestaurantContext']/@connectionString" />
+  </parameter>
+</parameters>

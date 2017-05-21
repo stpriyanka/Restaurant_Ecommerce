@@ -1,0 +1,70 @@
+﻿@model Ecomerce_Restaurant.Models.FoodModels.Food
+
+
+@using (Html.BeginForm("CreateFoodItem", "FoodCategories", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+	<input type="hidden" name="TotalRatedPeople" value="0" />
+	<input type="hidden" name="FoodRating" value="0" />
+
+    <div class="form-horizontal">
+        <h4>FoodName</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-xs-4 col-sm-4 col-md-4 col-lg-4" })
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+			</div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-xs-4 col-sm-4 col-md-4 col-lg-4" })
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				@Html.DropDownListFor(model => model.CategoryName, new SelectList(@ViewBag.CategoryNames), new { htmlAttributes = new { @class = "form-control" } })
+				@*@Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+			</div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FoodDescription, htmlAttributes: new { @class = "control-label col-xs-4 col-sm-4 col-md-4 col-lg-4" })
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				@Html.EditorFor(model => model.FoodDescription, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.FoodDescription, "", new { @class = "text-danger" })
+			</div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-xs-4 col-sm-4 col-md-4 col-lg-4" })
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				@Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+			</div>
+        </div>
+		
+        <div class="form-group">
+            @Html.LabelFor(model => model.FoodImageName, htmlAttributes: new { @class = "control-label col-xs-4 col-sm-4 col-md-4 col-lg-4" })
+	        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<div class="form-group">
+					<div class="col-md-10">
+						<input type="file" name="foodpic" class="btn btn-default" />
+					</div>
+
+				</div>
+	        </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+	            <input type="submit" value="Create" class="btn btn-success" />
+				<a href="@Url.Action("Index", "FoodCategories")" class="btn btn-success">Cancel</a>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,74 @@
+﻿@model Ecomerce_Restaurant.Models.FoodModels.Food
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FoodName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatingCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodImageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodImageName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

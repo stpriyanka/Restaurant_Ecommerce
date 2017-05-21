@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -18,7 +19,7 @@ namespace Ecomerce_Restaurant.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IDisposable
     {
         public ApplicationDbContext()
 			: base("RestaurantContext", throwIfV1Schema: false)
@@ -29,5 +30,10 @@ namespace Ecomerce_Restaurant.Models
         {
             return new ApplicationDbContext();
         }
+
+	    public void Dispose()
+	    {
+		    throw new NotImplementedException();
+	    }
     }
 }

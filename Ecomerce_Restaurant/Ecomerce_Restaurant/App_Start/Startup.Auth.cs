@@ -55,9 +55,9 @@ namespace Ecomerce_Restaurant
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            app.UseFacebookAuthentication(
-               appId: "1448969172063007",
-               appSecret: "879803c8298110901f00105a2478fdff");
+			//app.UseFacebookAuthentication(
+			//   appId: "1448969172063007",
+			//   appSecret: "879803c8298110901f00105a2478fdff");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

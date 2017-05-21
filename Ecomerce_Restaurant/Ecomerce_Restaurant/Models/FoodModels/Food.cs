@@ -31,23 +31,24 @@ namespace Ecomerce_Restaurant.Models.FoodModels
 		public double Price { get; set; }
 
 
-		[Display(Name = "Current Rating")]
+		[Display(Name = "Current Rate")]
 		[Index]
 		public double FoodRating { get; set; }
 
 
-		[Display(Name = "Total Ratings")]
+		[Display(Name = "Rating #")]
 		public int RatingCount { get; set; }
 
 		[Display(Name = "Image")]
 		public string FoodImageName { get; set; }
 
 		[NotMapped]
+		[Display(Name = " Total Price")]
 		public double TotalPrice { get; set; }
 
-		[NotMapped]
-		[Display(Name = "TotalAmountToPay")]
-		public double TotalAmountToPay { get; set; }
+		//[NotMapped]
+		//[Display(Name = "Total Amount")]
+		//public double TotalAmountToPay { get; set; }
 
 	}
 }

@@ -1,0 +1,41 @@
+﻿@model Ecomerce_Restaurant.Models.FoodModels.FoodCategory
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CategoryDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CategoryDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+	            <input type="submit" value="Create" class="btn btn-success" /> 
+				<a href="@Url.Action("Index", "FoodCategories")" class="btn btn-success">Cancel</a>
+	            @*<input type="submit" class="btn btn-default" value="Cancel" onclick="location.href='@Url.Action("Index", "FoodCategories")'" />*@
+             
+             </div>
+        </div>
+   </div>
+}
+
+
+
+
+
+
