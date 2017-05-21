@@ -1,6 +1,17 @@
 ﻿@{
 	ViewBag.Title = "Contact";
 }
+@section chat{
+
+	<!--Script references. -->
+	<!--Reference the jQuery library. -->
+	<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+	<!--Reference the SignalR library. -->
+	<script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+	<script src="~/signalr/hubs"></script>
+	<script src="~/Scripts/chatScript.js"></script>
+
+}
 <div class="container">
 	<div class="row pull-left">
 		<div class="col-xs-4">
@@ -55,7 +66,7 @@
 					<div class="form-group">
 						<span>
 							<input type="text" class="col-md-12 btn-default form-control" id="start1" placeholder="Type your name" />
-							<button type="button" id="startButton" class="col-md-12 btn btn-success" data-toggle="collapse" onclick="getName() " data-target="#demo"><i class="fa fa-comments" aria-hidden="true"></i> Start chat</button>
+							<button type="button" id="startButton" class="col-md-12 btn btn-success" data-toggle="collapse" onclick="getName()" data-target="#demo"><i class="fa fa-comments" aria-hidden="true"></i> Start chat</button>
 						</span>
 					</div>
 					<div>

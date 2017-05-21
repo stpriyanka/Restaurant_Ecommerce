@@ -1,7 +1,17 @@
 ﻿@{
 	ViewBag.Title = "Contact";
 }
+@section chat{
 
+	<!--Script references. -->
+	<!--Reference the jQuery library. -->
+	<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+	<!--Reference the SignalR library. -->
+	<script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+	<script src="~/signalr/hubs"></script>
+	<script src="~/Scripts/chatScript.js"></script>
+
+}
 <div class="container">
 	<div class="row pull-left">
 		<div class="col-xs-4">

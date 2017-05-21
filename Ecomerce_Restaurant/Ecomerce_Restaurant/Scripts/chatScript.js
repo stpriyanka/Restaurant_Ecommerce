@@ -10,6 +10,12 @@ var getName = function () {
 
 $(function () {
 	console.log($.connection);
+
+	var time = new Date();
+	var currentTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+	console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+
+
 	// Declare a proxy to reference the hub.
 	var chat = $.connection.chatHub;
 
@@ -18,20 +24,17 @@ $(function () {
 	// Create a function that the hub can call to broadcast messages.
 	chat.client.broadcastMessage = function (name, message) {
 		// Html encode display name and message.
-
-		
 		document.getElementById('start1').style.visibility = 'hidden';
 		var encodedName = name;
 		var encodedMsg = $('<div />').text(message).html();
-		
+
 		// Add the message to the page.
 		$('#discussion').append('<li><strong>' + encodedName
-			+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+			+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:'+'&nbsp;&nbsp;' + currentTime + '</li>');
+
 		return;
 	}
 	// Get the user name and store it to prepend to messages.
-	//$('#displayname').val(prompt('Enter your name:', ''));
-	//$('#displayname').val("Enter name", '');
 	// Set initial focus to message input box.
 	$('#message').focus();
 	// Start the connection.
