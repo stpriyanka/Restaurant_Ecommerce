@@ -10,6 +10,12 @@ var getName = function () {
 
 $(function () {
 	console.log($.connection);
+
+	var time = new Date();
+	var currentTime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+	console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+
+
 	// Declare a proxy to reference the hub.
 	var chat = $.connection.chatHub;
 
@@ -21,10 +27,11 @@ $(function () {
 		document.getElementById('start1').style.visibility = 'hidden';
 		var encodedName = name;
 		var encodedMsg = $('<div />').text(message).html();
-		
+
 		// Add the message to the page.
 		$('#discussion').append('<li><strong>' + encodedName
-			+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+			+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time:'+'&nbsp;&nbsp;' + currentTime + '</li>');
+
 		return;
 	}
 	// Get the user name and store it to prepend to messages.

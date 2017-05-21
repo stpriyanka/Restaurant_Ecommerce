@@ -8,3 +8,4 @@
 		document.getElementById('collapseOne').style.display = 'none';
 	}
 };
+
