@@ -1,82 +1,120 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+	ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title</h2>
-
-
-
 
 <div class="container">
-    
+	<div class="row pull-left">
+		<div class="col-xs-4">
+			<div class="container">
+				<div class="span4">
+					<h2>Find Us</h2>
+					<address>
+						<strong>Dhaka Food Restaurant & Bar</strong><br>
+						49 Hanstavagen<br>
+						162 64<br>
+						Kista<br>
+						Sweden<br>
+						<abbr title="Phone">P:</abbr> +460700000000
+					</address>
+				</div>
+			</div>
 
-        <h1 class="text-center"><a href="#myModal" role="button" class="btn btn-warning btn-lg" data-toggle="modal">Write Us</a></h1>
+			<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">We'd Love to Hear From You</h3>
+						</div>
+						<div class="modal-body">
+							<form class="form-horizontal col-sm-12">
+								<div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
+								<div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message here.." data-placement="top" data-trigger="manual"></textarea></div>
+								<div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="email@gmail.com" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+								<div class="form-group"><label>Phone</label><input class="form-control phone" placeholder="+46700000000" data-placement="top" data-trigger="manual" data-content="Must be a valid phone number (+46700000000)" type="text"></div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-success pull-right">Send!</button>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button class="btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
-    
+		</div>
+		<div class="col-xs-4">
+			<div>
+				<div id="googleMap" style="width: 300px; height: 300px"></div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div>
+				<div class="pull-left">
+					<div class="form-group">
+						<span>
+							<input type="text" class="col-md-12 btn-default form-control" id="start1" placeholder="Type your name" />
+							<button type="button" id="startButton" class="col-md-12 btn btn-success" data-toggle="collapse" onclick="getName()" data-target="#demo"><i class="fa fa-comments" aria-hidden="true"></i> Start chat</button>
+						</span>
+					</div>
+					<div>
+						<br />
+						<br />
+						<br />
+						<br />
+						<h3>Welcome !</h3>
+						<address>
+							<strong> Our Public Chat Room</strong><br>
+							We always appreciate you valuable feedbacky<br>
+							We reccoment to type your name before start over conversation with us.<br>
+							<br>
+
+						</address>
+					</div>
+				</div>
+				<div id="demo" class="navbar-fixed-bottom col-md-offset-8 col-md-4 collapse">
+					<div>
+						@Html.Partial("_chatView")
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">We'd Love to Hear From You</h3>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal col-sm-12">
-                    <div class="form-group"><label>Name</label><input class="form-control required" placeholder="Your name" data-placement="top" data-trigger="manual" data-content="Must be at least 3 characters long, and must only contain letters." type="text"></div>
-                    <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Your message here.." data-placement="top" data-trigger="manual"></textarea></div>
-                    <div class="form-group"><label>E-Mail</label><input class="form-control email" placeholder="email@gmail.com" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
-                    <div class="form-group"><label>Phone</label><input class="form-control phone" placeholder="+46700000000" data-placement="top" data-trigger="manual" data-content="Must be a valid phone number (+46700000000)" type="text"></div>
-                    <div class="form-group"><button type="submit" class="btn btn-success pull-right">Send!</button> 
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
-            </div>
-        </div>
-    </div>
-</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_LOYMhK-Q41Lz7QJjEvI3e-tiIsWaXRI&callback=myMap">
+</script>
+<script>
+	var myCenter = new google.maps.LatLng(59.402986, 17.944129);
+	var marker;
 
-    <header>
-        <script src="http://maps.googleapis.com/maps/api/js"></script>
-        <script>
+	//Create a function to initialize the map:
 
+	function initialize()
+		// create an object (mapProp) to define the properties for the map:
+		//The center property specifies where to center the map. Create a LatLng object to center the map on a specific point. Pass the coordinates in the order: latitude, longitude.
+		// The zoom property specifies the zoom level for the map. zoom: 0 shows a map of the Earth fully zoomed out. Higher zoom levels zoom in at a higher resolution.
+	{
+		var mapProp = {
+			center: myCenter,
+			zoom: 5,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
 
-            var myCenter = new google.maps.LatLng(59.402986, 17.944129);
-            var marker;
+		var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-            //Create a function to initialize the map:
+		var marker = new google.maps.Marker({
+			position: myCenter,
+			animation: google.maps.Animation.BOUNCE
+		});
 
-            function initialize()
-                // create an object (mapProp) to define the properties for the map:
-                //The center property specifies where to center the map. Create a LatLng object to center the map on a specific point. Pass the coordinates in the order: latitude, longitude.
-                // The zoom property specifies the zoom level for the map. zoom: 0 shows a map of the Earth fully zoomed out. Higher zoom levels zoom in at a higher resolution.
-            {
-                var mapProp = {
-                    center: myCenter,
-                    zoom: 5,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
+		marker.setMap(map);
+	}
 
-                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+	//Create a div element to hold the map. Use CSS to size the element: after header
 
-                var marker = new google.maps.Marker({
-                    position: myCenter,
-                    animation: google.maps.Animation.BOUNCE
-                });
-
-                marker.setMap(map);
-            }
-
-            //Create a div element to hold the map. Use CSS to size the element: after header
-
-            //Add a DOM listener that will execute the initialize() function on window load (when the page is loaded):
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-        </script>
-    </header>
-
-    <div>
-        <div id="googleMap" style="width: 500px; height: 380px;"></div>
-    </div>
+	//Add a DOM listener that will execute the initialize() function on window load (when the page is loaded):
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
