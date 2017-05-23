@@ -45,17 +45,17 @@ By definiing `role` in `[Authorize]` attribute I have set special access for `Su
 
 Here is the code snipet.
    
-   ```
-    			@if (Request.IsAuthenticated && User.IsInRole("SuperAdmin"))
-					{
-						<li>@Html.ActionLink("Users", "Index", "Superadmin")</li>
-					}
+```
+    	@if (Request.IsAuthenticated && User.IsInRole("SuperAdmin"))
+	{
+	 	<li>@Html.ActionLink("Users", "Index", "Superadmin")</li>
+	}
 
-					@if (Request.IsAuthenticated && User.IsInRole("Admin"))
-					{
-						<li>@Html.ActionLink("Admin", "Index", "FoodCategories")</li>
-					}
-    ```
+	@if (Request.IsAuthenticated && User.IsInRole("Admin"))
+	{
+		<li>@Html.ActionLink("Admin", "Index", "FoodCategories")</li>
+	}
+ ```
 In `SuperAdminController` function called `updateRole()` is the logic that only superadmin has access to do, swap role access between `SuperAdmin`, `Admin` or `General`; view and monitor all existed users roles.
 
 
@@ -63,7 +63,7 @@ In `SuperAdminController` function called `updateRole()` is the logic that only 
    - **PayPal API**: I have used public API to connect with PayPal. The root logic for payment has been implemented in `Root > Controller > Payment > PaymentController`. From server a [HttpPost] request `PaymentConfirmation` function has been called to integrate with Paypal. I also added some extra fields in the URL of my request as a query string. 
    
       ```
-   	[HttpPost]
+  	[HttpPost]
 		public void PaymentConfirmation(string name, string amount, string personNumber, string phoneNumber)
 		{
 			var path = "http://dhakafood.azurewebsites.net/";
@@ -77,12 +77,10 @@ In `SuperAdminController` function called `updateRole()` is the logic that only 
       ..................
       ```
 The entire test has been completed in their sandbox environment. [PayPal Sandbox][https://www.sandbox.paypal.com/us/home]
+Credit card processing, payment and all others are handle by the request.   
 
-
-   
-   
-   
-   - Google API
+**Google API**
+I have used Google Map's public API that is available for non-commercial use.
 
 5. Real time communication or two way message exchange using SignalR
 
