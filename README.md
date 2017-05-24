@@ -4,9 +4,12 @@
 **Safwath Tasnia Priyanka (910112-2449)**
 
 ### OverView:
+___
+
 The project idea of “Cloud-based E-commerce solution” has been developed on ASP.Net platform using Entity Framework MVC4.
 
 ### Technical Details :
+___
 
 **Code first approach using Entity Framework**
 
@@ -37,6 +40,7 @@ Controllers are the components that handle user interaction, work with the model
 
 
 #### 1. Register & login facility including form authentication & authorization **
+___
 
 **Authentication**
 
@@ -96,6 +100,7 @@ In `SuperAdminController` controller a function called `UpdateRole()` is the log
 
 
 #### 2. Cross-domain Integration (CORS)
+___
 
 ** PayPal API: **
 
@@ -145,6 +150,7 @@ Code snnipet is given below:
   .............
 ```
 #### 3. Real time communication
+___
 
 Online live chat application has been implemented using SignalR, a real time web framework. I have used SignalR version 2. Real-time web feature is the ability to have server code push content to connected clients immediately. The SignalR API contains two models for communicating between clients and servers: Persistent Connections and Hubs. A Hub is a more high-level pipeline built upon the Connection API that allows your client and server to call methods on each other directly.
 
@@ -209,6 +215,7 @@ The client side logic has been implemented in `chatScript.js` (`root > Scripts >
 ```
 
 #### 4.LINQ Query
+___
 
 I used LINQ to SQL everywhere in the application because I have only used SQL server and if I only use only SQL server then LINQ to SQL is considered faster. 
 
@@ -252,6 +259,8 @@ View is rendered in `root > View > Home > Index.cshtml` class.
 ```
 
 #### 5.CRUD functionality with Entity Framework
+___
+
 In this application I have perfomred CRUD (create, read, update, delete) operation using entity framework. I have used MVC helpers to generate vies and then I modified as per my requirements. 
 
 For `Food` and `FoodCategory` entities I have performed CRUD operationss. The back end logic for both resides in `FoodCategoryController.cs` class.
@@ -303,7 +312,8 @@ To **read** or render entities `Index function` from `FoodController` is used.
 	}
 ```
 
-#### 4. Integration with social networking sites face book
+#### 6. Integration with social networking sites face book
+___
 
 `_Layout.cshtml` class I have added scipts that is required to request Facebook public API to share any link to active login user's profile. In `_footer.cshtml` class has the html and public API that makes request to Facebook to share desire link.
 
@@ -314,7 +324,8 @@ To **read** or render entities `Index function` from `FoodController` is used.
 </form>
 ```
 
-#### 5.Host application and database on azure cloud service
+#### 7.Host application and database on azure cloud service
+___
 
 This is URl hosted in azure. [Found here.](http://dhakafood.azurewebsites.net/) . I have also created SQL Server database in in Azure and configure connectionString in `Web.Config` and publish this application from local. 
 
@@ -333,4 +344,4 @@ This is how from localhost the connectionString should look alike.
 </connectionStrings>
 ```
 	
-===================================================
+___
