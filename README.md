@@ -72,7 +72,7 @@ I have implemented 3 different role based user access  :
 'Role' based authorization-checks are declarative on codes. The logic has been implemented in `SuperAdminController`. I have specified roles which the current user should be a member of to access the requested resource.  
 
  ```
- public class SuperadminController : AccountController
+ 	public class SuperadminController : AccountController
 	{
 		// GET: Superadmin
 		[Authorize(Roles = "SuperAdmin")]
@@ -82,7 +82,8 @@ I have implemented 3 different role based user access  :
 			//get users
 			List<ApplicationUser> users = db.Users.ToList();
 			var roles = db.Roles.ToList();
-      .........
+  			 .........
+  
   ```
 
 By defining `role` in `[Authorize]` attribute I have set special access for `SuperAdmin`. I have mentioned in `_Layout.cshtml` class which view should be rendered for users with different access.
@@ -141,11 +142,11 @@ To use the Google Maps Geocoding API, I had to register this application by crea
 
 in `Contact.cshtml` page this is how I integrated Google Map API key adding with public URL.
 
-  ```
+ ```
 
-<script src="https://maps.googleapis.com/maps/api/js?key={Added-My-API-key:dfmkvhjggfgb}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key={Added-My-API-key:dfmkvhjggfgb}"></script>
   
-  ```
+ ```
 
 Since I have a mentioned a specific address in Google Map, So I added direct latitude and longitude for that address inside code.
 
@@ -153,10 +154,10 @@ Code snippet is given below:
 
    ```
    
-<script>
-	var myCenter = new google.maps.LatLng(59.402986, 17.944129);
-	var marker;
-         ....
+	<script>
+		var myCenter = new google.maps.LatLng(59.402986, 17.944129);
+		var marker;
+        	 ....
   
    ```
   
