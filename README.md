@@ -1,5 +1,7 @@
-# Cloud based Web Application Knowledge Base
-### Sofware Development for Web (DA544B)
+# Cloud based Web Application Project Documentation
+## Course: Sofware Development for Web (DA544B)
+### Computer Software Development
+**Safwath Tasnia Priyanka (910112-2449)**
 
 ### OverView:
 The project idea of “Cloud-based E-commerce solution” has been developed on ASP.Net platform using Entity Framework MVC4.
