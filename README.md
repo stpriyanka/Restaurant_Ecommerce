@@ -7,7 +7,7 @@
 ### Overview:
 ___
 
-The project idea of “Cloud-based E-commerce solution” has been developed on ASP.Net platform using Entity Framework MVC4.
+The project idea of “Cloud-based e-commerce solution” has been developed on ASP.Net platform as a part of this course 'Software Development for Web'. The aim of this document is to demonstrate technical details and explain logics behind code in a deeper level to understand the knowledge base of this application.
 
 ### Technical Details :
 ___
