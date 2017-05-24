@@ -1,8 +1,4 @@
 # Cloud based Web Application Project Documentation
-## Course: Sofware Development for Web (DA544B)
-### Computer Software Development
-#### Examiner: Dawit Mengistu
-**Written by: Safwath Tasnia Priyanka (910112-2449)**
 
 ### Overview:
 ___
@@ -345,11 +341,6 @@ ___
 This is URL hosted in azure. [Dhaka Food Restaurant.](http://dhakafood.azurewebsites.net/). I have also hosted a SQL Server database in Azure and configure connectionString in `Web.Config` and publish this application from local. 
 
 Database connectionString before deploying application to Azure should be this.
-
-```
-<!--<add name="RestaurantContext" connectionString="Server=tcp:dhakafood.database.windows.net,1433;Initial Catalog=RestaurantContext;Persist Security Info=False; UserID=dhakafood; Password=Dbuser12@;MultipleActiveResultSets=False;Encrypt=True; TrustServerCertificate=False;Connection Timeout=30;" providerName="System.Data.SqlClient" />--> 
-
-```
 
 If the application is running from `locahost` make sure the `connectionString` for database is back to `.\SQLExpress` instead the one mentioned above.
 This is how from localhost the connectionString should look alike.
