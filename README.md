@@ -3,7 +3,21 @@
 ### OverView:
 The project idea of “Cloud-based E-commerce solution” has been developed on ASP.Net platform using Entity Framework MVC4.
 
-### Application feature based on project scenario:
+### Technical Details :
+
+The application has been developed in MVC 4. I have chossed this as using MVC in application enbales option for scaling and also it is highly testable. MVC framework includes the following components:
+
+![alt text](https://s27.postimg.org/5errs9kkz/d_Quk_P.png)
+
+-Models:
+model objects retrieve and store model state in a database. For example, a Product object might retrieve information from a database, operate on it, and then write updated information back to a Products table in a SQL Server database.
+
+-Views:
+Views are the components that display the application's user interface (UI).
+
+-Controllers:
+Controllers are the components that handle user interaction, work with the model, and ultimately select a view to render that displays UI. In an MVC application, the view only displays information; the controller handles and responds to user input and interaction.
+
 
 #### 1. Register & login facility including form authentication & authorization **
 
