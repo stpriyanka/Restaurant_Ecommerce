@@ -158,7 +158,7 @@ Code snippet is given below:
 	var marker;
          ....
   
-  ```
+   ```
   
 #### 3. Real Time Communication
 ___
