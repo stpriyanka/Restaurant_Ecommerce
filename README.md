@@ -26,7 +26,7 @@ I have chosen `Code-First` as
 
 The application has been developed in MVC 4. I have chosen this as using MVC in application enables option for scaling and also it is highly testable. MVC framework includes the following components:
 
-![alt text](https://s27.postimg.org/5errs9kkz/d_Quk_P.png)
+![alt text](https://s28.postimg.org/5k4jdkzp9/d_Quk_P.png)
 
 - Models:
 model objects retrieve and store model state in a database. For example, a Product object might retrieve information from a database, operate on it, and then write updated information back to a Products table in a SQL Server database.
