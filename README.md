@@ -99,7 +99,8 @@ Here is the code snippet.
 	{
 		<li>@Html.ActionLink("Admin", "Index", "FoodCategories")</li>
 	}
- ```
+
+```
 
 In `SuperAdminController` a function has been implemented called `UpdateRole()` which is the logic that, only super admin has access to do, such as swap role access between `SuperAdmin`, `Admin` or `General`, view all registered users and keep monitoring about users roles.
 
@@ -132,7 +133,7 @@ All the payment transactions for this application has been completed in PayPal's
 
 A CORS request to a Google API is similar to a REST request. Google provides free API to integrate Google Maps for non-commercial purpose.
 
-**Enable API Key**
+Enable API Key
 
 Google APIs use the OAuth 2.0 protocol for authentication and authorization. So, every application requests an access token from the Google Authorization Server, extracts a token from the response, and sends the token to the Google API that I added in request URL.
 
@@ -140,20 +141,23 @@ To use the Google Maps Geocoding API, I had to register this application by crea
 
 in `Contact.cshtml` page this is how I integrated Google Map API key adding with public URL.
 
-```
+
+   ```
 <script src="https://maps.googleapis.com/maps/api/js?key={Added-My-API-key:dfmkvhjggfgb}"></script>
-```
+   ```
 
 Since I have a mentioned a specific address in Google Map, So I added direct latitude and longitude for that address inside code.
 
 Code snippet is given below:
 
-```
+   ```
 <script>
 	var myCenter = new google.maps.LatLng(59.402986, 17.944129);
 	var marker;
   .............
-```
+  
+  ```
+  
 #### 3. Real Time Communication
 ___
 
@@ -167,7 +171,8 @@ In my solution root, a hub class has been created named `chatHub.cs` that works 
 
 The client side logic has been implemented in `chatScript.js` (`root > Scripts > chatScript.js`) class. The logic is really simple and pretty self explanatory yet I have added some comments on it.
 
-```
+
+  ```
     // Declare a proxy to reference the hub.
     var chat = $.connection.chatHub;
 
@@ -217,7 +222,9 @@ The client side logic has been implemented in `chatScript.js` (`root > Scripts >
   });
 });
 ........
-```
+
+
+  ```
 
 #### 4.LINQ Query
 ___
