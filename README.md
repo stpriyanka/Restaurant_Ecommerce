@@ -310,4 +310,16 @@ To **read** or render entities `Index function` from `FoodController` is used.
 </form>
 ```
 
+#### 5.Host application and database on azure cloud service
+
+This is URl hosted in azure. [Found here.](http://dhakafood.azurewebsites.net/) . I have also created SQL Server database in in Azure and configure connectionString in `Web.Config` and publish this application from local. 
+
+If the application is running from `locahost` make sure the `conneectionString` is back to `.\SQLExpress` instead `SQL Server.`
+This is how from localhost the connectionString should look alike.
+
+```
+<connectionStrings>
+	<add name="RestaurantContext" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=RestaurantContext;Integrated Security=SSPI" providerName="System.Data.SqlClient" />
+</connectionStrings>
+```
 
