@@ -173,6 +173,7 @@ The client side logic has been implemented in `chatScript.js` (`root > Scripts >
 
 
   ```
+  
     // Declare a proxy to reference the hub.
     var chat = $.connection.chatHub;
 
@@ -221,8 +222,6 @@ The client side logic has been implemented in `chatScript.js` (`root > Scripts >
     $('#message').val('').focus();
   });
 });
-........
-
 
   ```
 
@@ -292,6 +291,7 @@ public ActionResult Create([Bind(Include = "ID,CategoryName,CategoryDescription"
 	}
 	return View(foodCategories);
 }
+
 ```
 
 To **update** specific item in `Food` entity 
@@ -312,6 +312,7 @@ To **delete** specific item in `Food` entity
 To **read** or render entities `Index()` function from `FoodController` has been used.
 
 ```
+
 public ActionResult Index(string currentFilter, int? page)
 {
 	var q = db.FoodCategories.OrderBy(r => r.CategoryName).ToList();
@@ -319,6 +320,7 @@ public ActionResult Index(string currentFilter, int? page)
 	int pageNumber = (page ?? 1);
 	return View(q.ToPagedList(pageNumber, pageSize));
 }
+
 ```
 
 #### 6. Integration with social networking sites face book
@@ -326,12 +328,14 @@ ___
 
 `_Layout.cshtml` class I have added scipts that is required to request Facebook public API to share application link in active login user's profile. In `_footer.cshtml` class has the html and public API that makes request to Facebook to share desire link.
 
-```
+ ```
+ 
 <form id="form1" runat="server">
 	<a href="https://www.facebook.com/sharer/sharer.php?u="><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
 	<p>&copy; @DateTime.Now.Year - Dhaka Food Restaurant & Bar </p>
 </form>
-```
+
+ ```
 
 #### 7.Host application and database on Azure cloud service
 ___
