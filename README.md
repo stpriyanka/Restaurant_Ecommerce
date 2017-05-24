@@ -15,7 +15,7 @@ ___
 
 The Code First Approach provides an alternative to the Database First and Model First approaches to the Entity Data Model and creates a database for us based on our classes that we will be creating in this article.
 
-![alt text](https://s12.postimg.org/y2hnhc2kd/image_06_ADC953.png)
+![alt text](https://s15.postimg.org/yt3qd0ji3/codefirst.jpg)
 
 I have chosen `Code-First` as 
 - it is very popular because I don't like any kind of designers and defining mapping in database manually.
