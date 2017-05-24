@@ -141,20 +141,22 @@ To use the Google Maps Geocoding API, I had to register this application by crea
 
 in `Contact.cshtml` page this is how I integrated Google Map API key adding with public URL.
 
+  ```
 
-   ```
 <script src="https://maps.googleapis.com/maps/api/js?key={Added-My-API-key:dfmkvhjggfgb}"></script>
-   ```
+  
+  ```
 
 Since I have a mentioned a specific address in Google Map, So I added direct latitude and longitude for that address inside code.
 
 Code snippet is given below:
 
    ```
+   
 <script>
 	var myCenter = new google.maps.LatLng(59.402986, 17.944129);
 	var marker;
-  .............
+         ....
   
   ```
   
@@ -171,9 +173,8 @@ In my solution root, a hub class has been created named `chatHub.cs` that works 
 
 The client side logic has been implemented in `chatScript.js` (`root > Scripts > chatScript.js`) class. The logic is really simple and pretty self explanatory yet I have added some comments on it.
 
-
-  ```
-  
+ ```
+ 
     // Declare a proxy to reference the hub.
     var chat = $.connection.chatHub;
 
