@@ -3,6 +3,7 @@
 ### Overview:
 ___
 
+[WIKI](https://github.com/stpriyanka/Restaurant_Ecommerce/wiki)
 The project idea of “Cloud-based e-commerce solution” has been developed on ASP.Net platform as a part of this course 'Software Development for Web'. The aim of this document is to demonstrate technical details and explain logics behind code in a deeper level to understand the knowledge base of this application.
 
 ### Technical Details :
